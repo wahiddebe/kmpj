@@ -1,0 +1,11 @@
+Soucode ini dibangun dan dirancang oleh:
+
+Programmer: AKSANTARA
+Tahun 	  : 2019
+Website   : www.AKSANTARA.com 
+Email     : AKSANTARA.DIGITAL@gmail.com
+Lisensi   : OpenSource
+
+NB: Anda boleh menyebarluaskan dan mengembangkan sourcode ini!
+
+-Semoga Bermanfaat-
