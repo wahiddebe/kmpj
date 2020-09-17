@@ -16,14 +16,6 @@
                  <?php $h = $this->session->userdata('akses'); ?>
                  <?php $u = $this->session->userdata('user'); ?>
                  <?php if ($h == '1') { ?>
-                     <!--dropdown-->
-                     <li class="dropdown">
-                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" title="Transaksi"><span class="fa fa-shopping-cart" aria-hidden="true"></span> Barang</a>
-                         <ul class="dropdown-menu">
-                             <li><a href="<?php echo base_url() . 'admin/pembelian' ?>"><span class="fa fa-shopping-bag" aria-hidden="true"></span> Barang (Masuk)</a></li>
-                             <li><a href="<?php echo base_url() . 'admin/penjualan' ?>"><span class="fa fa-cubes" aria-hidden="true"></span> Barang (Keluar)</a></li>
-                         </ul>
-                     </li>
                      <!--ending dropdown-->
 
                      <li>

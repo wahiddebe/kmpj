@@ -54,88 +54,25 @@
                   <?php $h = $this->session->userdata('akses'); ?>
                   <?php $u = $this->session->userdata('user'); ?>
 
-                  <!-- Projects Row -->
-                  <div class="row">
-                        <?php if ($h == '1') { ?>
-                              <div class="col-md-3 portfolio-item">
-                                    <div class="menu-item blue" style="height:150px;">
-                                          <a href="<?php echo base_url() . 'admin/penjualan' ?>" data-toggle="modal">
-                                                <i class="fa fa-shopping-bag"></i>
-                                                <p style="text-align:left;font-size:14px;padding-left:5px;">Barang Keluar</p>
-                                          </a>
-                                    </div>
-                              </div>
-                              <div class="col-md-3 portfolio-item">
-                                    <div class="menu-item green" style="height:150px;">
-                                          <a href="<?php echo base_url() . 'admin/penjualan_grosir' ?>" data-toggle="modal">
-                                                <i class="fa fa-cubes"></i>
-                                                <p style="text-align:left;font-size:14px;padding-left:5px;">Barang Keluar</p>
-                                          </a>
-                                    </div>
-                              </div>
-                              <div class="col-md-3 portfolio-item">
-                                    <div class="menu-item light-orange" style="height:150px;">
-                                          <a href="<?php echo base_url() . 'admin/suplier' ?>" data-toggle="modal">
-                                                <i class="fa fa-truck"></i>
-                                                <p style="text-align:left;font-size:14px;padding-left:5px;">Suplier</p>
-                                          </a>
-                                    </div>
-                              </div>
-                              <div class="col-md-3 portfolio-item">
-                                    <div class="menu-item color" style="height:150px;">
-                                          <a href="<?php echo base_url() . 'admin/kategori' ?>" data-toggle="modal">
-                                                <i class="fa fa-sitemap"></i>
-                                                <p style="text-align:left;font-size:14px;padding-left:5px;">Kategori</p>
-                                          </a>
-                                    </div>
-                              </div>
-                        <?php } ?>
-                        <?php if ($h == '2') { ?>
-                              <div class="col-md-3 portfolio-item">
-                                    <div class="menu-item blue" style="height:150px;">
-                                          <a href="#" data-toggle="modal">
-                                                <i class="fa fa-shopping-cart"></i>
-                                                <p style="text-align:left;font-size:14px;padding-left:5px;">Penjualan Eceran</p>
-                                          </a>
-                                    </div>
-                              </div>
-                              <div class="col-md-3 portfolio-item">
-                                    <div class="menu-item green" style="height:150px;">
-                                          <a href="#" data-toggle="modal">
-                                                <i class="fa fa-users"></i>
-                                                <p style="text-align:left;font-size:14px;padding-left:5px;">Penjualan Grosir</p>
-                                          </a>
-                                    </div>
-                              </div>
-                              <div class="col-md-3 portfolio-item">
-                                    <div class="menu-item light-orange" style="height:150px;">
-                                          <a href="#" data-toggle="modal">
-                                                <i class="fa fa-truck"></i>
-                                                <p style="text-align:left;font-size:14px;padding-left:5px;">Suplier</p>
-                                          </a>
-                                    </div>
-                              </div>
-                              <div class="col-md-3 portfolio-item">
-                                    <div class="menu-item color" style="height:150px;">
-                                          <a href="#" data-toggle="modal">
-                                                <i class="fa fa-sitemap"></i>
-                                                <p style="text-align:left;font-size:14px;padding-left:5px;">Kategori</p>
-                                          </a>
-                                    </div>
-                              </div>
-                        <?php } ?>
-                  </div>
 
-                  <!-- /.row -->
 
                   <!-- Projects Row -->
                   <div class="row">
                         <?php if ($h == '1') { ?>
+
                               <div class="col-md-3 portfolio-item">
                                     <div class="menu-item purple" style="height:150px;">
                                           <a href="<?php echo base_url() . 'admin/barang' ?>" data-toggle="modal">
                                                 <i class="fa fa-shopping-cart"></i>
-                                                <p style="text-align:left;font-size:14px;padding-left:5px;">Barang</p>
+                                                <p style="text-align:left;font-size:14px;padding-left:5px;">Barang Masuk</p>
+                                          </a>
+                                    </div>
+                              </div>
+                              <div class="col-md-3 portfolio-item">
+                                    <div class="menu-item purple" style="height:150px;">
+                                          <a href="<?php echo base_url() . 'admin/barang_keluar' ?>" data-toggle="modal">
+                                                <i class="fa fa-shopping-cart"></i>
+                                                <p style="text-align:left;font-size:14px;padding-left:5px;">Barang keluar</p>
                                           </a>
                                     </div>
                               </div>
@@ -155,50 +92,53 @@
                                           </a>
                                     </div>
                               </div>
+                        <?php } ?>
+                        <?php if ($h == '2') { ?>
+
                               <div class="col-md-3 portfolio-item">
-                                    <div class="menu-item light-red" style="height:150px;">
-                                          <a href="<?php echo base_url() . 'admin/pembelian' ?>" data-toggle="modal">
-                                                <i class="fa fa-cubes"></i>
+                                    <div class="menu-item purple" style="height:150px;">
+                                          <a href="<?php echo base_url() . 'admin/barang' ?>" data-toggle="modal">
+                                                <i class="fa fa-shopping-cart"></i>
                                                 <p style="text-align:left;font-size:14px;padding-left:5px;">Barang Masuk</p>
                                           </a>
                                     </div>
                               </div>
-                        <?php } ?>
-                        <?php if ($h == '2') { ?>
                               <div class="col-md-3 portfolio-item">
                                     <div class="menu-item purple" style="height:150px;">
-                                          <a href="<?php echo base_url() . 'admin/penjualan_grosir' ?>" data-toggle="modal">
-                                                <i class="fa fa-cubes"></i>
-                                                <p style="text-align:left;font-size:14px;padding-left:5px;">Penjualan Grosir</p>
-                                          </a>
-                                    </div>
-                              </div>
-                              <div class="col-md-3 portfolio-item">
-                                    <div class="menu-item red" style="height:150px;">
-                                          <a href="<?php echo base_url() . 'admin/penjualan' ?>" data-toggle="modal">
-                                                <i class="fa fa-shopping-bag"></i>
-                                                <p style="text-align:left;font-size:14px;padding-left:5px;">Penjualan Eceran</p>
+                                          <a href="<?php echo base_url() . 'admin/barang_keluar' ?>" data-toggle="modal">
+                                                <i class="fa fa-shopping-cart"></i>
+                                                <p style="text-align:left;font-size:14px;padding-left:5px;">Barang keluar</p>
                                           </a>
                                     </div>
                               </div>
                               <div class="col-md-3 portfolio-item">
                                     <div class="menu-item blue" style="height:150px;">
-                                          <a href="#" data-toggle="modal">
+                                          <a href="<?php echo base_url() . 'admin/laporan' ?>" data-toggle="modal">
                                                 <i class="fa fa-bar-chart"></i>
                                                 <p style="text-align:left;font-size:14px;padding-left:5px;">Laporan</p>
                                           </a>
                                     </div>
                               </div>
+                        <?php } ?>
+                  </div>
+                  <!-- Projects Row -->
+                  <div class="row">
+                        <?php if ($h == '1') { ?>
                               <div class="col-md-3 portfolio-item">
-                                    <div class="menu-item light-red" style="height:150px;">
-                                          <a href="#" data-toggle="modal">
-                                                <i class="fa fa-cubes"></i>
-                                                <p style="text-align:left;font-size:14px;padding-left:5px;">Pembelian</p>
+                                    <div class="menu-item color" style="height:150px;">
+                                          <a href="<?php echo base_url() . 'admin/kategori' ?>" data-toggle="modal">
+                                                <i class="fa fa-sitemap"></i>
+                                                <p style="text-align:left;font-size:14px;padding-left:5px;">Kategori</p>
                                           </a>
                                     </div>
                               </div>
                         <?php } ?>
+                        <?php if ($h == '2') { ?>
+
+                        <?php } ?>
                   </div>
+
+                  <!-- /.row -->
 
 
                   <!-- /.row -->

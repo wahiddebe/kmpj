@@ -1,5 +1,5 @@
 <?php
-class Barang extends CI_Controller
+class Barang_keluar extends CI_Controller
 {
 	function __construct()
 	{
@@ -9,15 +9,15 @@ class Barang extends CI_Controller
 			redirect($url);
 		};
 		$this->load->model('m_kategori');
-		$this->load->model('m_barang');
+		$this->load->model('m_barang_keluar');
 	}
 	function index()
 	{
 		if ($this->session->userdata('akses') == '1') {
-			$data['data'] = $this->m_barang->tampil_barang();
+			$data['data'] = $this->m_barang_keluar->tampil_barang();
 			$data['kat'] = $this->m_kategori->tampil_kategori();
 			$data['kat2'] = $this->m_kategori->tampil_kategori();
-			$this->load->view('admin/v_barang', $data);
+			$this->load->view('admin/v_barang_keluar', $data);
 		} else {
 			echo "Halaman tidak ditemukan";
 		}
@@ -25,7 +25,7 @@ class Barang extends CI_Controller
 	function tambah_barang()
 	{
 		if ($this->session->userdata('akses') == '1') {
-			$kobar = $this->m_barang->get_kobar();
+			$kobar = $this->m_barang_keluar->get_kobar();
 			$nabar = $this->input->post('nabar');
 			$kat = $this->input->post('kategori');
 			$satuan = $this->input->post('satuan');
@@ -38,9 +38,9 @@ class Barang extends CI_Controller
 			$tipe = $this->input->post('tipe');
 			$stok = $this->input->post('stok');
 			$min_stok = $this->input->post('min_stok');
-			$this->m_barang->simpan_barang($kobar, $nabar, $kat, $satuan, $panjang, $lebar, $tinggi, $volume, $merk, $tipe, $deskripsi, $stok, $min_stok);
+			$this->m_barang_keluar->simpan_barang($kobar, $nabar, $kat, $satuan, $panjang, $lebar, $tinggi, $volume, $merk, $tipe, $deskripsi, $stok, $min_stok);
 
-			redirect('admin/barang');
+			redirect('admin/barang_keluar');
 		} else {
 			echo "Halaman tidak ditemukan";
 		}
@@ -61,8 +61,8 @@ class Barang extends CI_Controller
 			$tipe = $this->input->post('tipe');
 			$stok = $this->input->post('stok');
 			$min_stok = $this->input->post('min_stok');
-			$this->m_barang->update_barang($kobar, $nabar, $kat, $satuan, $panjang, $lebar, $tinggi, $volume, $merk, $tipe, $deskripsi, $stok, $min_stok);
-			redirect('admin/barang');
+			$this->m_barang_keluar->update_barang($kobar, $nabar, $kat, $satuan, $panjang, $lebar, $tinggi, $volume, $merk, $tipe, $deskripsi, $stok, $min_stok);
+			redirect('admin/barang_keluar');
 		} else {
 			echo "Halaman tidak ditemukan";
 		}
@@ -71,8 +71,8 @@ class Barang extends CI_Controller
 	{
 		if ($this->session->userdata('akses') == '1') {
 			$kode = $this->input->post('kode');
-			$this->m_barang->hapus_barang($kode);
-			redirect('admin/barang');
+			$this->m_barang_keluar->hapus_barang($kode);
+			redirect('admin/barang_keluar');
 		} else {
 			echo "Halaman tidak ditemukan";
 		}

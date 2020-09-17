@@ -58,25 +58,16 @@
 
                         <tr>
                             <td style="text-align:center;vertical-align:middle">1</td>
-                            <td style="vertical-align:middle;">Grafik Stok Barang</td>
+                            <td style="vertical-align:middle;">Grafik Stok Barang Masuk</td>
                             <td style="text-align:center;">
                                 <a class="btn btn-sm btn-default" href="<?php echo base_url() . 'admin/grafik/graf_stok_barang' ?>" target="_blank"><span class="fa fa-eye"></span> Lihat</a>
                             </td>
                         </tr>
-
                         <tr>
-                            <td style="text-align:center;vertical-align:middle">2</td>
-                            <td style="vertical-align:middle;">Grafik Barang Keluar PerBulan</td>
+                            <td style="text-align:center;vertical-align:middle">1</td>
+                            <td style="vertical-align:middle;">Grafik Stok Barang Keluar</td>
                             <td style="text-align:center;">
-                                <a class="btn btn-sm btn-default" href="#lap_jual_perbulan" data-toggle="modal"><span class="fa fa-eye"></span> Lihat</a>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td style="text-align:center;vertical-align:middle">3</td>
-                            <td style="vertical-align:middle;">Grafik Barang Keluar PerTahun</td>
-                            <td style="text-align:center;">
-                                <a class="btn btn-sm btn-default" href="#lap_jual_pertahun" data-toggle="modal"><span class="fa fa-eye"></span> Lihat</a>
+                                <a class="btn btn-sm btn-default" href="<?php echo base_url() . 'admin/grafik/graf_stok_barang_keluar' ?>" target="_blank"><span class="fa fa-eye"></span> Lihat</a>
                             </td>
                         </tr>
 
@@ -104,7 +95,7 @@
                                     <select name="bln" class="selectpicker show-tick form-control" data-live-search="true" title="Pilih Bulan" data-width="80%" required />
                                     <?php foreach ($jual_bln->result_array() as $k) {
                                         $bln = $k['bulan'];
-                                        ?>
+                                    ?>
                                         <option><?php echo $bln; ?></option>
                                     <?php } ?>
                                     </select>
@@ -140,7 +131,7 @@
                                     <select name="thn" class="selectpicker show-tick form-control" data-live-search="true" title="Pilih Tahun" data-width="80%" required />
                                     <?php foreach ($jual_thn->result_array() as $t) {
                                         $thn = $t['tahun'];
-                                        ?>
+                                    ?>
                                         <option><?php echo $thn; ?></option>
                                     <?php } ?>
                                     </select>

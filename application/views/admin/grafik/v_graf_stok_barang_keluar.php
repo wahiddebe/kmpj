@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Grafik Stok Barang Masuk</title>
+    <title>Grafik Stok Barang Keluar</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <!-- load library jquery dan highcharts -->
 
@@ -43,7 +43,7 @@
                     }
                 },
                 title: {
-                    text: 'Grafik Stok Barang Masuk',
+                    text: 'Grafik Stok Barang Keluar',
                     style: {
                         fontSize: '18px',
                         fontFamily: 'Verdana, sans-serif'
