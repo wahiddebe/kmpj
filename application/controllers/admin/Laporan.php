@@ -37,6 +37,11 @@ class Laporan extends CI_Controller
 		$x['data'] = $this->m_laporan->get_stok_barang_keluar();
 		$this->load->view('admin/laporan/v_lap_stok_barang_keluar', $x);
 	}
+	function lap_stok_barang_masuk()
+	{
+		$x['data'] = $this->m_laporan->get_stok_barang_masuk();
+		$this->load->view('admin/laporan/v_lap_stok_barang_masuk', $x);
+	}
 	function lap_data_barang()
 	{
 		$x['data'] = $this->m_laporan->get_data_barang();

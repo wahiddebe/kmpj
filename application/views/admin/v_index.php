@@ -64,6 +64,14 @@
                                     <div class="menu-item purple" style="height:150px;">
                                           <a href="<?php echo base_url() . 'admin/barang' ?>" data-toggle="modal">
                                                 <i class="fa fa-shopping-cart"></i>
+                                                <p style="text-align:left;font-size:14px;padding-left:5px;">Barang Keseluruhan</p>
+                                          </a>
+                                    </div>
+                              </div>
+                              <div class="col-md-3 portfolio-item">
+                                    <div class="menu-item purple" style="height:150px;">
+                                          <a href="<?php echo base_url() . 'admin/barang_masuk' ?>" data-toggle="modal">
+                                                <i class="fa fa-shopping-cart"></i>
                                                 <p style="text-align:left;font-size:14px;padding-left:5px;">Barang Masuk</p>
                                           </a>
                                     </div>

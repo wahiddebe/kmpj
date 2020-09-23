@@ -1,7 +1,7 @@
 <html lang="en" moznomarginboxes mozdisallowselectionprint>
 
 <head>
-    <title>laporan data barang keluar</title>
+    <title>laporan data barang masuk</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="<?php echo base_url('assets/css/laporan.css') ?>" />
 </head>
@@ -18,7 +18,7 @@
             <tr>
                 <td colspan="2" style="width:800px;padding-left:20px;">
                     <center>
-                        <h4>LAPORAN BARANG KELUAR</h4>
+                        <h4>LAPORAN BARANG MASUK</h4>
                     </center><br />
                 </td>
             </tr>
@@ -48,7 +48,7 @@
                     echo "<tr style='background-color:#ccc;'>
     <td width='4%' align='center'>No</td>
     <td width='60%' align='center'>Nama Barang</td>
-    <td width='30%' align='center'>Jumlah Barang Keluar</td>
+    <td width='30%' align='center'>Jumlah Barang Masuk</td>
     
     </tr>";
                     $nomor = 1;

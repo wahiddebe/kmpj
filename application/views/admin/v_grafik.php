@@ -58,16 +58,23 @@
 
                         <tr>
                             <td style="text-align:center;vertical-align:middle">1</td>
-                            <td style="vertical-align:middle;">Grafik Stok Barang Masuk</td>
+                            <td style="vertical-align:middle;">Grafik Total Jumlah Barang Masuk</td>
                             <td style="text-align:center;">
-                                <a class="btn btn-sm btn-default" href="<?php echo base_url() . 'admin/grafik/graf_stok_barang' ?>" target="_blank"><span class="fa fa-eye"></span> Lihat</a>
+                                <a class="btn btn-sm btn-default" href="<?php echo base_url() . 'admin/grafik/graf_stok_barang_masuk' ?>" target="_blank"><span class="fa fa-eye"></span> Lihat</a>
                             </td>
                         </tr>
                         <tr>
                             <td style="text-align:center;vertical-align:middle">1</td>
-                            <td style="vertical-align:middle;">Grafik Stok Barang Keluar</td>
+                            <td style="vertical-align:middle;">Grafik Total Jumlah Barang Keluar</td>
                             <td style="text-align:center;">
                                 <a class="btn btn-sm btn-default" href="<?php echo base_url() . 'admin/grafik/graf_stok_barang_keluar' ?>" target="_blank"><span class="fa fa-eye"></span> Lihat</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align:center;vertical-align:middle">1</td>
+                            <td style="vertical-align:middle;">Grafik Stok Barang</td>
+                            <td style="text-align:center;">
+                                <a class="btn btn-sm btn-default" href="<?php echo base_url() . 'admin/grafik/graf_stok_barang' ?>" target="_blank"><span class="fa fa-eye"></span> Lihat</a>
                             </td>
                         </tr>
 

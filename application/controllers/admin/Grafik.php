@@ -38,6 +38,11 @@ class Grafik extends CI_Controller
 		$x['report'] = $this->m_grafik->statistik_stok_keluar();
 		$this->load->view('admin/grafik/v_graf_stok_barang_keluar', $x);
 	}
+	function graf_stok_barang_masuk()
+	{
+		$x['report'] = $this->m_grafik->statistik_stok_masuk();
+		$this->load->view('admin/grafik/v_graf_stok_barang_masuk', $x);
+	}
 
 
 	function graf_penjualan_perbulan()

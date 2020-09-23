@@ -36,7 +36,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <h1 class="page-header">Data
-                    <small>Barang Masuk</small>
+                    <small>Barang Keseluruhan</small>
                     <div class="pull-right"><a href="#" class="btn btn-sm btn-success" data-toggle="modal" data-target="#largeModal"><span class="fa fa-plus"></span> Tambah Barang</a></div>
                 </h1>
             </div>

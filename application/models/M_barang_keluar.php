@@ -8,36 +8,42 @@ class M_barang_keluar extends CI_Model
 		return $hsl;
 	}
 
-	function update_barang($kobar, $nabar, $kat, $satuan, $panjang, $lebar, $tinggi, $volume, $merk, $tipe, $deskripsi, $stok, $min_stok)
+	function update_barang($id, $kobar, $jumlah, $stok_baru)
 	{
 		$user_id = $this->session->userdata('idadmin');
-		$hsl = $this->db->query("UPDATE tbl_barang_keluar SET barang_nama='$nabar',barang_satuan='$satuan',barang_panjang='$panjang',barang_lebar='$lebar',barang_tinggi='$tinggi',barang_merk='$merk',barang_tipe='$tipe',barang_deskripsi='$deskripsi',barang_volume='$volume',barang_stok='$stok',barang_min_stok='$min_stok',barang_tgl_last_update=NOW(),barang_kategori_id='$kat',barang_user_id='$user_id' WHERE barang_id='$kobar'");
+		$hsl = $this->db->query("UPDATE tbl_barang_keluar SET barang_jumlah='$jumlah', barang_user_id='$user_id' WHERE id='$id'");
+
+		$hs2 = $this->db->query("UPDATE tbl_barang SET barang_stok='$stok_baru', barang_user_id='$user_id' WHERE barang_id='$kobar'");
+		return $hs2;
 		return $hsl;
 	}
 
 	function tampil_barang()
 	{
-		$hsl = $this->db->query("SELECT barang_id,barang_nama,barang_tipe,barang_merk,barang_satuan,barang_panjang,barang_lebar,barang_tinggi,barang_volume,barang_deskripsi,barang_stok,barang_min_stok,barang_kategori_id,kategori_nama FROM tbl_barang_keluar JOIN tbl_kategori ON barang_kategori_id=kategori_id");
+		$hsl = $this->db->query("SELECT id,barang_id,barang_jumlah,barang_nama,barang_tipe,barang_merk,barang_satuan,barang_panjang,barang_lebar,barang_tinggi,barang_volume,barang_deskripsi,barang_stok,barang_min_stok,barang_kategori_id,kategori_nama FROM tbl_barang_keluar JOIN tbl_kategori ON barang_kategori_id=kategori_id");
 		return $hsl;
 	}
 
-	function simpan_barang($kobar, $nabar, $kat, $satuan, $panjang, $lebar, $tinggi, $volume, $merk, $tipe, $deskripsi, $stok, $min_stok)
+	function simpan_barang($id, $kobar, $jumlah, $nabar, $kat, $satuan, $panjang, $lebar, $tinggi, $volume, $merk, $tipe, $deskripsi, $stok_baru)
 	{
 		$user_id = $this->session->userdata('idadmin');
-		$hsl = $this->db->query("INSERT INTO tbl_barang_keluar (barang_id,barang_nama,barang_satuan,barang_panjang,barang_lebar,barang_tinggi,barang_volume,barang_merk,barang_tipe,barang_deskripsi,barang_stok,barang_min_stok,barang_kategori_id,barang_user_id) VALUES ('$kobar','$nabar','$satuan','$panjang','$lebar','$tinggi', '$volume', '$merk', '$tipe', '$deskripsi','$stok','$min_stok','$kat','$user_id')");
+		$hsl = $this->db->query("INSERT INTO tbl_barang_keluar (id,barang_id,barang_jumlah,barang_nama,barang_satuan,barang_panjang,barang_lebar,barang_tinggi,barang_volume,barang_merk,barang_tipe,barang_deskripsi,barang_kategori_id,barang_user_id) VALUES ('$id','$kobar','$jumlah','$nabar','$satuan','$panjang','$lebar','$tinggi', '$volume', '$merk', '$tipe', '$deskripsi','$kat','$user_id')");
+
+		$hsl2 = $this->db->query("UPDATE tbl_barang SET barang_stok='$stok_baru' where barang_id='$kobar'");
+		return $hsl2;
 		return $hsl;
 	}
 
 
 	function get_barang($kobar)
 	{
-		$hsl = $this->db->query("SELECT * FROM tbl_barang_keluar where barang_id='$kobar'");
+		$hsl = $this->db->query("SELECT * FROM tbl_barang_keluar where id='$kobar'");
 		return $hsl;
 	}
 
 	function get_kobar()
 	{
-		$q = $this->db->query("SELECT MAX(RIGHT(barang_id,6)) AS kd_max FROM tbl_barang_keluar");
+		$q = $this->db->query("SELECT MAX(RIGHT(id,6)) AS kd_max FROM tbl_barang_keluar");
 		$kd = "";
 		if ($q->num_rows() > 0) {
 			foreach ($q->result() as $k) {
@@ -47,6 +53,6 @@ class M_barang_keluar extends CI_Model
 		} else {
 			$kd = "000001";
 		}
-		return "BR" . $kd;
+		return "BRKeluar" . $kd;
 	}
 }

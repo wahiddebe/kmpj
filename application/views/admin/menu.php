@@ -25,20 +25,6 @@
                          <a href="<?php echo base_url() . 'admin/laporan' ?>"><span class="fa fa-file"></span> Laporan</a>
                      </li>
                  <?php } ?>
-                 <?php if ($h == '2') { ?>
-                     <!--dropdown-->
-                     <li class="dropdown">
-                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" title="Transaksi"><span class="fa fa-shopping-cart" aria-hidden="true"></span> Transaksi</a>
-                         <ul class="dropdown-menu">
-                             <li><a href="<?php echo base_url() . 'admin/pembelian' ?>"><span class="fa fa-shopping-bag" aria-hidden="true"></span> Barang (Masuk)</a></li>
-                             <li><a href="<?php echo base_url() . 'admin/penjualan' ?>"><span class="fa fa-cubes" aria-hidden="true"></span> Barang (Keluar)</a></li>
-                         </ul>
-                     </li>
-                     <!--ending dropdown-->
-                     <li>
-                         <a href="<?php echo base_url() . 'admin/retur' ?>"><span class="fa fa-refresh"></span> Retur</a>
-                     </li>
-                 <?php } ?>
                  <li>
                      <a href="<?php echo base_url() . 'administrator/logout' ?>"><span class="fa fa-sign-out"></span> Logout</a>
                  </li>

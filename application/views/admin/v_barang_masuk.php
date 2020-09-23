@@ -36,7 +36,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <h1 class="page-header">Data
-                    <small>Barang Keluar</small>
+                    <small>Barang Masuk</small>
                     <div class="pull-right"><a href="#" class="btn btn-sm btn-success" data-toggle="modal" data-target="#largeModal"><span class="fa fa-plus"></span> Tambah Barang</a></div>
                 </h1>
             </div>
@@ -60,7 +60,7 @@
                             <th>Tinggi</th>
                             <th>Volume</th>
                             <th>Deskripsi</th>
-                            <th>Jumlah Barang Keluar</th>
+                            <th>Jumlah Barang Masuk</th>
                             <th>Kategori</th>
                             <th style="width:100px;text-align:center;">Aksi</th>
                         </tr>
@@ -119,7 +119,7 @@
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                         <h3 class="modal-title" id="myModalLabel">Tambah Barang</h3>
                     </div>
-                    <form class="form-horizontal" method="post" action="<?php echo base_url() . 'admin/barang_keluar/tambah_barang' ?>">
+                    <form class="form-horizontal" method="post" action="<?php echo base_url() . 'admin/barang_masuk/tambah_barang' ?>">
                         <div class="modal-body">
 
                             <!--<div class="form-group">
@@ -190,7 +190,7 @@
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                             <h3 class="modal-title" id="myModalLabel">Edit Barang</h3>
                         </div>
-                        <form class="form-horizontal" method="post" action="<?php echo base_url() . 'admin/barang_keluar/edit_barang' ?>">
+                        <form class="form-horizontal" method="post" action="<?php echo base_url() . 'admin/barang_masuk/edit_barang' ?>">
                             <div class="modal-body">
                                 <div class="form-group">
                                     <label class="control-label col-xs-3">ID</label>
@@ -244,7 +244,7 @@
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                             <h3 class="modal-title" id="myModalLabel">Hapus Barang</h3>
                         </div>
-                        <form class="form-horizontal" method="post" action="<?php echo base_url() . 'admin/barang_keluar/hapus_barang' ?>">
+                        <form class="form-horizontal" method="post" action="<?php echo base_url() . 'admin/barang_masuk/hapus_barang' ?>">
                             <div class="modal-body">
                                 <p>Yakin mau menghapus data <?= $nm ?>..?</p>
                                 <input name="kode" type="hidden" value="<?php echo $id; ?>">

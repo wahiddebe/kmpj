@@ -14,7 +14,18 @@ class M_grafik extends CI_Model
     }
     function statistik_stok_keluar()
     {
-        $query = $this->db->query("SELECT barang_nama,SUM(barang_stok) AS tot_stok FROM tbl_barang_keluar JOIN tbl_kategori ON barang_kategori_id=kategori_id GROUP BY barang_nama");
+        $query = $this->db->query("SELECT barang_nama,SUM(barang_jumlah) AS tot_stok FROM tbl_barang_keluar JOIN tbl_kategori ON barang_kategori_id=kategori_id GROUP BY barang_nama");
+
+        if ($query->num_rows() > 0) {
+            foreach ($query->result() as $data) {
+                $hasil[] = $data;
+            }
+            return $hasil;
+        }
+    }
+    function statistik_stok_masuk()
+    {
+        $query = $this->db->query("SELECT barang_nama,SUM(barang_jumlah) AS tot_stok FROM tbl_barang_masuk JOIN tbl_kategori ON barang_kategori_id=kategori_id GROUP BY barang_nama");
 
         if ($query->num_rows() > 0) {
             foreach ($query->result() as $data) {

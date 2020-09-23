@@ -1,7 +1,7 @@
 <html lang="en" moznomarginboxes mozdisallowselectionprint>
 
 <head>
-    <title>laporan data barang masuk</title>
+    <title>laporan data barang </title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="<?php echo base_url('assets/css/laporan.css') ?>" />
 </head>
@@ -18,7 +18,7 @@
             <tr>
                 <td colspan="2" style="width:800px;padding-left:20px;">
                     <center>
-                        <h4>LAPORAN BARANG MASUK</h4>
+                        <h4>LAPORAN BARANG</h4>
                     </center><br />
                 </td>
             </tr>
@@ -47,7 +47,7 @@
                     if ($group != '-')
                         echo "</table><br>";
                     echo "<table align='center' width='900px;' border='1'>";
-                    echo "<tr><td colspan='2'><b>Kategori: $kat</b></td> <td style='text-align:center;'><b>Total Stok: $tots </b></td></tr>";
+                    echo "<tr><td colspan='2'><b>Kategori: $kat</b></td> <td style='text-align:center;'></td></tr>";
                     echo "<tr style='background-color:#ccc;'>
     <td width='4%' align='center'>No</td>
     <td width='60%' align='center'>Nama Barang</td>
@@ -82,7 +82,7 @@
         </table>
         <table align="center" style="width:800px; border:none;margin-top:5px;margin-bottom:20px;">
             <tr>
-                <td align="right">Padang, <?php echo date('d-M-Y') ?></td>
+                <td align="right">Jepara, <?php echo date('d-M-Y') ?></td>
             </tr>
             <tr>
                 <td align="right"></td>

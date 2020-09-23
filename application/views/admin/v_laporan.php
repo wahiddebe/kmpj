@@ -59,7 +59,7 @@
                             <td style="text-align:center;vertical-align:middle">1</td>
                             <td style="vertical-align:middle;">Laporan Barang Masuk</td>
                             <td style="text-align:center;">
-                                <a class="btn btn-sm btn-default" href="<?php echo base_url() . 'admin/laporan/lap_stok_barang' ?>" target="_blank"><span class="fa fa-print"></span> Print</a>
+                                <a class="btn btn-sm btn-default" href="<?php echo base_url() . 'admin/laporan/lap_stok_barang_masuk' ?>" target="_blank"><span class="fa fa-print"></span> Print</a>
                             </td>
                         </tr>
                         <tr>
@@ -67,6 +67,13 @@
                             <td style="vertical-align:middle;">Laporan Barang Keluar</td>
                             <td style="text-align:center;">
                                 <a class="btn btn-sm btn-default" href="<?php echo base_url() . 'admin/laporan/lap_stok_barang_keluar' ?>" target="_blank"><span class="fa fa-print"></span> Print</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align:center;vertical-align:middle">2</td>
+                            <td style="vertical-align:middle;">Laporan Barang Keseluruhan</td>
+                            <td style="text-align:center;">
+                                <a class="btn btn-sm btn-default" href="<?php echo base_url() . 'admin/laporan/lap_stok_barang' ?>" target="_blank"><span class="fa fa-print"></span> Print</a>
                             </td>
                         </tr>
 

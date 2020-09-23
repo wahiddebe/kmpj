@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Grafik Stok Keluar</title>
+    <title>Grafik Stok Masuk</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <!-- load library jquery dan highcharts -->
 
@@ -43,7 +43,7 @@
                     }
                 },
                 title: {
-                    text: 'Grafik Barang Keluar',
+                    text: 'Grafik Barang Masuk',
                     style: {
                         fontSize: '18px',
                         fontFamily: 'Verdana, sans-serif'
@@ -72,16 +72,16 @@
                 },
                 yAxis: {
                     title: {
-                        text: 'Total Jumlah Barang Keluar'
+                        text: 'Total Jumlah Barang Masuk'
                     },
                 },
                 tooltip: {
                     formatter: function() {
-                        return 'Total Jumlah Barang Keluar  <b>' + this.x + '</b> Adalah <b>' + Highcharts.numberFormat(this.y, 0) + '</b> Items ';
+                        return 'Total Jumlah Barang Masuk  <b>' + this.x + '</b> Adalah <b>' + Highcharts.numberFormat(this.y, 0) + '</b> Items ';
                     }
                 },
                 series: [{
-                    name: 'Total Jumlah Barang Keluar',
+                    name: 'Total Jumlah Barang Masuk',
                     data: <?php echo json_encode($value); ?>,
                     shadow: true,
                     dataLabels: {

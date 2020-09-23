@@ -8,7 +8,12 @@ class M_laporan extends CI_Model
 	}
 	function get_stok_barang_keluar()
 	{
-		$hsl = $this->db->query("SELECT kategori_id,kategori_nama,barang_nama,barang_stok FROM tbl_kategori JOIN tbl_barang_keluar ON kategori_id=barang_kategori_id GROUP BY kategori_id,barang_nama");
+		$hsl = $this->db->query("SELECT id,barang_id,barang_jumlah,barang_nama,barang_tipe,barang_merk,barang_satuan,barang_panjang,barang_lebar,barang_tinggi,barang_volume,barang_deskripsi,barang_stok,barang_min_stok,barang_kategori_id,kategori_nama FROM tbl_barang_keluar JOIN tbl_kategori ON barang_kategori_id=kategori_id");
+		return $hsl;
+	}
+	function get_stok_barang_masuk()
+	{
+		$hsl = $this->db->query("SELECT id,barang_id,barang_jumlah,barang_nama,barang_tipe,barang_merk,barang_satuan,barang_panjang,barang_lebar,barang_tinggi,barang_volume,barang_deskripsi,barang_stok,barang_min_stok,barang_kategori_id,kategori_nama FROM tbl_barang_masuk JOIN tbl_kategori ON barang_kategori_id=kategori_id");
 		return $hsl;
 	}
 	// function get_data_barang(){
