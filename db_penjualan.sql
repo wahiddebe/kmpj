@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 18 Sep 2020 pada 06.53
+-- Waktu pembuatan: 23 Sep 2020 pada 11.39
 -- Versi server: 10.4.11-MariaDB
 -- Versi PHP: 7.4.5
 
@@ -51,8 +51,9 @@ CREATE TABLE `tbl_barang` (
 --
 
 INSERT INTO `tbl_barang` (`barang_id`, `barang_nama`, `barang_tipe`, `barang_merk`, `barang_satuan`, `barang_panjang`, `barang_lebar`, `barang_tinggi`, `barang_volume`, `barang_stok`, `barang_min_stok`, `barang_tgl_input`, `barang_tgl_last_update`, `barang_kategori_id`, `barang_user_id`, `barang_deskripsi`) VALUES
-('BR000001', 'Lemari edit', 'tipe edit', 'merk edit', 'Milimeter', 13, 23, 33, 63, 123, 23, '2020-09-17 17:06:35', '2020-09-18 01:13:25', 6, 2, 'desk edit'),
-('BR000002', 'asda', 'asdas', 'dasdasd', 'Milimeter', 2, 2, 2, 6, 22222, 222, '2020-09-17 18:21:58', NULL, 40, 2, 'asdasda');
+('BR000001', 'Lemari edit', 'tipe edit', 'merk edit', 'Milimeter', 13, 23, 33, 63, 130, 23, '2020-09-17 17:06:35', '2020-09-18 01:13:25', 6, 1, 'desk edit'),
+('BR000002', 'asda', 'asdas', 'dasdasd', 'Milimeter', 2, 2, 2, 6, 20222, 222, '2020-09-17 18:21:58', NULL, 40, 2, 'asdasda'),
+('BR000003', 'asdasdasd', 'asdasasdasd', 'dasdasdasdasd', 'Milimeter', 2, 2, 2, 6, 200, 2, '2020-09-17 18:21:58', NULL, 40, 2, 'asdasda');
 
 -- --------------------------------------------------------
 
@@ -61,7 +62,8 @@ INSERT INTO `tbl_barang` (`barang_id`, `barang_nama`, `barang_tipe`, `barang_mer
 --
 
 CREATE TABLE `tbl_barang_keluar` (
-  `barang_id` varchar(15) NOT NULL,
+  `id` varchar(15) NOT NULL,
+  `barang_id` varchar(255) NOT NULL,
   `barang_nama` varchar(150) DEFAULT NULL,
   `barang_tipe` varchar(255) NOT NULL,
   `barang_merk` varchar(255) NOT NULL,
@@ -72,6 +74,7 @@ CREATE TABLE `tbl_barang_keluar` (
   `barang_volume` double DEFAULT NULL,
   `barang_stok` int(11) DEFAULT 0,
   `barang_min_stok` int(11) DEFAULT 0,
+  `barang_jumlah` int(30) NOT NULL,
   `barang_tgl_input` timestamp NULL DEFAULT current_timestamp(),
   `barang_tgl_last_update` datetime DEFAULT NULL,
   `barang_kategori_id` int(11) DEFAULT NULL,
@@ -83,9 +86,45 @@ CREATE TABLE `tbl_barang_keluar` (
 -- Dumping data untuk tabel `tbl_barang_keluar`
 --
 
-INSERT INTO `tbl_barang_keluar` (`barang_id`, `barang_nama`, `barang_tipe`, `barang_merk`, `barang_satuan`, `barang_panjang`, `barang_lebar`, `barang_tinggi`, `barang_volume`, `barang_stok`, `barang_min_stok`, `barang_tgl_input`, `barang_tgl_last_update`, `barang_kategori_id`, `barang_user_id`, `barang_deskripsi`) VALUES
-('BR000001', 'awea', 'qweqwe', 'qweasdedit', 'Milimeter', 1, 2, 4, 8, 123, 12, '2020-09-17 18:23:18', '2020-09-18 02:23:08', 40, 2, 'asdas'),
-('BR000002', 'aweaasd', 'qweqweasd', 'qweasdedit', 'Milimeter', 1, 2, 4, 8, 126, 99, '2020-09-17 18:23:18', '2020-09-18 02:23:28', 40, 2, 'asdas');
+INSERT INTO `tbl_barang_keluar` (`id`, `barang_id`, `barang_nama`, `barang_tipe`, `barang_merk`, `barang_satuan`, `barang_panjang`, `barang_lebar`, `barang_tinggi`, `barang_volume`, `barang_stok`, `barang_min_stok`, `barang_jumlah`, `barang_tgl_input`, `barang_tgl_last_update`, `barang_kategori_id`, `barang_user_id`, `barang_deskripsi`) VALUES
+('BRKeluar000001', 'BR000001', 'Lemari edit', 'tipe edit', 'merk edit', 'Milimeter', 13, 23, 33, 63, 0, 0, 50, '2020-09-22 18:47:33', NULL, 6, 1, 'desk edit'),
+('BRKeluar000002', 'BR000001', 'Lemari edit', 'tipe edit', 'merk edit', 'Milimeter', 13, 23, 33, 63, 0, 0, 25, '2020-09-23 02:35:53', NULL, 6, 1, 'desk edit'),
+('BRKeluar000003', 'BR000002', 'asda', 'asdas', 'dasdasd', 'Milimeter', 2, 2, 2, 6, 0, 0, 2000, '2020-09-23 02:48:20', NULL, 40, 1, 'asdasda');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `tbl_barang_masuk`
+--
+
+CREATE TABLE `tbl_barang_masuk` (
+  `id` varchar(15) NOT NULL,
+  `barang_id` varchar(255) NOT NULL,
+  `barang_nama` varchar(150) DEFAULT NULL,
+  `barang_tipe` varchar(255) NOT NULL,
+  `barang_merk` varchar(255) NOT NULL,
+  `barang_satuan` varchar(30) DEFAULT NULL,
+  `barang_panjang` double DEFAULT NULL,
+  `barang_lebar` double DEFAULT NULL,
+  `barang_tinggi` double DEFAULT NULL,
+  `barang_volume` double DEFAULT NULL,
+  `barang_stok` int(11) DEFAULT 0,
+  `barang_min_stok` int(11) DEFAULT 0,
+  `barang_jumlah` int(30) NOT NULL,
+  `barang_tgl_input` timestamp NULL DEFAULT current_timestamp(),
+  `barang_tgl_last_update` datetime DEFAULT NULL,
+  `barang_kategori_id` int(11) DEFAULT NULL,
+  `barang_user_id` int(11) DEFAULT NULL,
+  `barang_deskripsi` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `tbl_barang_masuk`
+--
+
+INSERT INTO `tbl_barang_masuk` (`id`, `barang_id`, `barang_nama`, `barang_tipe`, `barang_merk`, `barang_satuan`, `barang_panjang`, `barang_lebar`, `barang_tinggi`, `barang_volume`, `barang_stok`, `barang_min_stok`, `barang_jumlah`, `barang_tgl_input`, `barang_tgl_last_update`, `barang_kategori_id`, `barang_user_id`, `barang_deskripsi`) VALUES
+('BRMasuk000001', 'BR000001', 'Lemari edit', 'tipe edit', 'merk edit', 'Milimeter', 13, 23, 33, 63, 0, 0, 80, '2020-09-23 02:20:47', NULL, 6, 1, 'desk edit'),
+('BRMasuk000002', 'BR000001', 'Lemari edit', 'tipe edit', 'merk edit', 'Milimeter', 13, 23, 33, 63, 0, 0, 25, '2020-09-23 03:17:56', NULL, 6, 1, 'desk edit');
 
 -- --------------------------------------------------------
 
@@ -232,7 +271,15 @@ ALTER TABLE `tbl_barang`
 -- Indeks untuk tabel `tbl_barang_keluar`
 --
 ALTER TABLE `tbl_barang_keluar`
-  ADD PRIMARY KEY (`barang_id`),
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `barang_user_id` (`barang_user_id`),
+  ADD KEY `barang_kategori_id` (`barang_kategori_id`);
+
+--
+-- Indeks untuk tabel `tbl_barang_masuk`
+--
+ALTER TABLE `tbl_barang_masuk`
+  ADD PRIMARY KEY (`id`),
   ADD KEY `barang_user_id` (`barang_user_id`),
   ADD KEY `barang_kategori_id` (`barang_kategori_id`);
 
