@@ -55,13 +55,13 @@
                             <th>Tipe</th>
                             <th>Merk</th>
                             <th>Satuan</th>
-                            <th>Panjang</th>
-                            <th>Lebar</th>
-                            <th>Tinggi</th>
                             <th>Volume</th>
                             <th>Deskripsi</th>
-                            <th>Jumlah Barang Keluar</th>
                             <th>Kategori</th>
+                            <th>Sub Kategori</th>
+                            <th>Nama Pembawa Barang</th>
+                            <th>Jumlah Barang Masuk</th>
+                            <th>Tanggal Input</th>
                             <th style="width:100px;text-align:center;">Aksi</th>
                         </tr>
                     </thead>
@@ -74,32 +74,35 @@
                             $id = $a['id'];
                             $nm = $a['barang_nama'];
                             $satuan = $a['barang_satuan'];
-                            $panjang = $a['barang_panjang'];
                             $merk = $a['barang_merk'];
                             $tipe = $a['barang_tipe'];
-                            $lebar = $a['barang_lebar'];
-                            $tinggi = $a['barang_tinggi'];
                             $volume = $a['barang_volume'];
                             $deskripsi = $a['barang_deskripsi'];
+                            $pemegang = $a['barang_pemegang'];
+                            $pembawa = $a['barang_pembawa'];
                             $jumlah = $a['barang_jumlah'];
+                            $tgl_input = $a['barang_tgl_input'];
+                            $stok = $a['barang_stok'];
+                            $min_stok = $a['barang_min_stok'];
                             $kat_id = $a['barang_kategori_id'];
                             $kat_nama = $a['kategori_nama'];
+                            $sub_kat_nama = $a['sub_kategori_nama'];
                         ?>
                             <tr>
                                 <td style="text-align:center;"><?php echo $no; ?></td>
                                 <td><?php echo $id; ?></td>
                                 <td><?php echo $barang_id; ?></td>
                                 <td><?php echo $nm; ?></td>
-                                <td style="text-align:center;"><?php echo $merk; ?></td>
                                 <td style="text-align:center;"><?php echo $tipe; ?></td>
+                                <td style="text-align:center;"><?php echo $merk; ?></td>
                                 <td style="text-align:center;"><?php echo $satuan; ?></td>
-                                <td style="text-align:center;"><?php echo $panjang; ?></td>
-                                <td style="text-align:center;"><?php echo $lebar; ?></td>
-                                <td style="text-align:center;"><?php echo $tinggi; ?></td>
                                 <td style="text-align:center;"><?php echo $volume; ?></td>
                                 <td style="text-align:center;"><?php echo $deskripsi; ?></td>
+                                <td style="text-align:center;"><?php echo $kat_nama; ?></td>
+                                <td style="text-align:center;"><?php echo $sub_kat_nama; ?></td>
+                                <td style="text-align:center;"><?php echo $pembawa; ?></td>
                                 <td style="text-align:center;"><?php echo $jumlah; ?></td>
-                                <td><?php echo $kat_nama; ?></td>
+                                <td><?php echo $tgl_input; ?></td>
                                 <td style="text-align:center;">
                                     <a class="btn btn-xs btn-warning" href="#modalEditPelanggan<?php echo $id ?>" data-toggle="modal" title="Edit"><span class="fa fa-edit"></span> Edit</a>
                                     <a class="btn btn-xs btn-danger" href="#modalHapusPelanggan<?php echo $id ?>" data-toggle="modal" title="Hapus"><span class="fa fa-close"></span> Hapus</a>

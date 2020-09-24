@@ -140,9 +140,14 @@
                                           </a>
                                     </div>
                               </div>
-                        <?php } ?>
-                        <?php if ($h == '2') { ?>
-
+                              <div class="col-md-3 portfolio-item">
+                                    <div class="menu-item green" style="height:150px;">
+                                          <a href="<?php echo base_url() . 'admin/sub_kategori' ?>" data-toggle="modal">
+                                                <i class="fa fa-sitemap"></i>
+                                                <p style="text-align:left;font-size:14px;padding-left:5px;">Sub Kategori</p>
+                                          </a>
+                                    </div>
+                              </div>
                         <?php } ?>
                   </div>
 

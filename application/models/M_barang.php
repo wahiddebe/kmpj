@@ -8,23 +8,23 @@ class M_barang extends CI_Model
 		return $hsl;
 	}
 
-	function update_barang($kobar, $nabar, $kat, $satuan, $panjang, $lebar, $tinggi, $volume, $merk, $tipe, $deskripsi, $stok, $min_stok)
+	function update_barang($kobar, $nabar, $kat, $satuan, $pemegang, $subkat, $volume, $merk, $tipe, $deskripsi, $stok, $min_stok)
 	{
 		$user_id = $this->session->userdata('idadmin');
-		$hsl = $this->db->query("UPDATE tbl_barang SET barang_nama='$nabar',barang_satuan='$satuan',barang_panjang='$panjang',barang_lebar='$lebar',barang_tinggi='$tinggi',barang_merk='$merk',barang_tipe='$tipe',barang_deskripsi='$deskripsi',barang_volume='$volume',barang_stok='$stok',barang_min_stok='$min_stok',barang_tgl_last_update=NOW(),barang_kategori_id='$kat',barang_user_id='$user_id' WHERE barang_id='$kobar'");
+		$hsl = $this->db->query("UPDATE tbl_barang SET barang_nama='$nabar',barang_satuan='$satuan',barang_pemegang='$pemegang',barang_sub_kategori_id='$subkat',barang_merk='$merk',barang_tipe='$tipe',barang_deskripsi='$deskripsi',barang_volume='$volume',barang_stok='$stok',barang_min_stok='$min_stok',barang_tgl_last_update=NOW(),barang_kategori_id='$kat',barang_user_id='$user_id' WHERE barang_id='$kobar'");
 		return $hsl;
 	}
 
 	function tampil_barang()
 	{
-		$hsl = $this->db->query("SELECT barang_id,barang_nama,barang_tipe,barang_merk,barang_satuan,barang_panjang,barang_lebar,barang_tinggi,barang_volume,barang_deskripsi,barang_stok,barang_min_stok,barang_kategori_id,kategori_nama FROM tbl_barang JOIN tbl_kategori ON barang_kategori_id=kategori_id");
+		$hsl = $this->db->query("SELECT barang_id,barang_nama,barang_tipe,barang_merk,barang_satuan,barang_panjang,barang_lebar,barang_tinggi,barang_volume,barang_deskripsi,barang_stok,barang_min_stok,barang_pemegang,barang_kategori_id,barang_sub_kategori_id,tbl_kategori.kategori_nama AS kategori_nama,tbl_sub_kategori.kategori_nama AS sub_kategori_nama FROM tbl_barang JOIN tbl_kategori ON tbl_barang.barang_kategori_id=tbl_kategori.kategori_id JOIN tbl_sub_kategori ON tbl_barang.barang_sub_kategori_id = tbl_sub_kategori.kategori_id  ");
 		return $hsl;
 	}
 
-	function simpan_barang($kobar, $nabar, $kat, $satuan, $panjang, $lebar, $tinggi, $volume, $merk, $tipe, $deskripsi, $stok, $min_stok)
+	function simpan_barang($kobar, $nabar, $kat, $satuan, $pemegang, $subkat, $volume, $merk, $tipe, $deskripsi, $stok, $min_stok)
 	{
 		$user_id = $this->session->userdata('idadmin');
-		$hsl = $this->db->query("INSERT INTO tbl_barang (barang_id,barang_nama,barang_satuan,barang_panjang,barang_lebar,barang_tinggi,barang_volume,barang_merk,barang_tipe,barang_deskripsi,barang_stok,barang_min_stok,barang_kategori_id,barang_user_id) VALUES ('$kobar','$nabar','$satuan','$panjang','$lebar','$tinggi', '$volume', '$merk', '$tipe', '$deskripsi','$stok','$min_stok','$kat','$user_id')");
+		$hsl = $this->db->query("INSERT INTO tbl_barang (barang_id,barang_nama,barang_satuan,barang_pemegang,barang_sub_kategori_id,barang_volume,barang_merk,barang_tipe,barang_deskripsi,barang_stok,barang_min_stok,barang_kategori_id,barang_user_id) VALUES ('$kobar','$nabar','$satuan','$pemegang','$subkat', '$volume', '$merk', '$tipe', '$deskripsi','$stok','$min_stok','$kat','$user_id')");
 		return $hsl;
 	}
 

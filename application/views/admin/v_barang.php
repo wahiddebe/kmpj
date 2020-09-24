@@ -54,14 +54,13 @@
                             <th>Tipe</th>
                             <th>Merk</th>
                             <th>Satuan</th>
-                            <th>Panjang</th>
-                            <th>Lebar</th>
-                            <th>Tinggi</th>
                             <th>Volume</th>
                             <th>Deskripsi</th>
                             <th>Stok</th>
                             <th>Min Stok</th>
                             <th>Kategori</th>
+                            <th>Sub Kategori</th>
+                            <th>Nama Pemegang Barang</th>
                             <th style="width:100px;text-align:center;">Aksi</th>
                         </tr>
                     </thead>
@@ -73,17 +72,16 @@
                             $id = $a['barang_id'];
                             $nm = $a['barang_nama'];
                             $satuan = $a['barang_satuan'];
-                            $panjang = $a['barang_panjang'];
                             $merk = $a['barang_merk'];
                             $tipe = $a['barang_tipe'];
-                            $lebar = $a['barang_lebar'];
-                            $tinggi = $a['barang_tinggi'];
                             $volume = $a['barang_volume'];
                             $deskripsi = $a['barang_deskripsi'];
+                            $pemegang = $a['barang_pemegang'];
                             $stok = $a['barang_stok'];
                             $min_stok = $a['barang_min_stok'];
                             $kat_id = $a['barang_kategori_id'];
                             $kat_nama = $a['kategori_nama'];
+                            $sub_kat_nama = $a['sub_kategori_nama'];
                         ?>
                             <tr>
                                 <td style="text-align:center;"><?php echo $no; ?></td>
@@ -92,14 +90,13 @@
                                 <td style="text-align:center;"><?php echo $merk; ?></td>
                                 <td style="text-align:center;"><?php echo $tipe; ?></td>
                                 <td style="text-align:center;"><?php echo $satuan; ?></td>
-                                <td style="text-align:center;"><?php echo $panjang; ?></td>
-                                <td style="text-align:center;"><?php echo $lebar; ?></td>
-                                <td style="text-align:center;"><?php echo $tinggi; ?></td>
                                 <td style="text-align:center;"><?php echo $volume; ?></td>
                                 <td style="text-align:center;"><?php echo $deskripsi; ?></td>
                                 <td style="text-align:center;"><?php echo $stok; ?></td>
                                 <td style="text-align:center;"><?php echo $min_stok; ?></td>
                                 <td><?php echo $kat_nama; ?></td>
+                                <td><?php echo $sub_kat_nama; ?></td>
+                                <td style="text-align:center;"><?php echo $pemegang; ?></td>
                                 <td style="text-align:center;">
                                     <a class="btn btn-xs btn-warning" href="#modalEditPelanggan<?php echo $id ?>" data-toggle="modal" title="Edit"><span class="fa fa-edit"></span> Edit</a>
                                     <a class="btn btn-xs btn-danger" href="#modalHapusPelanggan<?php echo $id ?>" data-toggle="modal" title="Hapus"><span class="fa fa-close"></span> Hapus</a>
@@ -138,19 +135,19 @@
                             <div class="form-group">
                                 <label class="control-label col-xs-3">Tipe</label>
                                 <div class="col-xs-9">
-                                    <input name="tipe" class="form-control" type="text" placeholder="Tipe Barang..." style="width:335px;" required>
+                                    <input name="tipe" class="form-control" type="text" placeholder="Tipe Barang..." style="width:335px;">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="control-label col-xs-3">Merk</label>
                                 <div class="col-xs-9">
-                                    <input name="merk" class="form-control" type="text" placeholder="Merk Barang..." style="width:335px;" required>
+                                    <input name="merk" class="form-control" type="text" placeholder="Merk Barang..." style="width:335px;">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="control-label col-xs-3">Deskripsi</label>
                                 <div class="col-xs-9">
-                                    <input name="deskripsi" class="form-control" type="text" placeholder="Deskripsi Barang..." style="width:335px;" required>
+                                    <input name="deskripsi" class="form-control" type="text" placeholder="Deskripsi Barang..." style="width:335px;">
                                 </div>
                             </div>
 
@@ -168,38 +165,31 @@
                                     </select>
                                 </div>
                             </div>
+                            <div class="form-group">
+                                <label class="control-label col-xs-3">Sub Kategori</label>
+                                <div class="col-xs-9">
+                                    <select name="subkategori" class="selectpicker show-tick form-control" data-live-search="true" title="Pilih Sub Kategori" data-width="80%" placeholder="Pilih Sub Kategori" required>
+                                        <?php foreach ($kat3->result_array() as $k3) {
+                                            $id_kat = $k3['kategori_id'];
+                                            $nm_kat = $k3['kategori_nama'];
+                                        ?>
+                                            <option value="<?php echo $id_kat; ?>"><?php echo $nm_kat; ?></option>
+                                        <?php } ?>
+
+                                    </select>
+                                </div>
+                            </div>
 
 
 
                             <div class="form-group">
-                                <label class="control-label col-xs-3">Satuan Ukuran</label>
+                                <label class="control-label col-xs-3">Satuan</label>
                                 <div class="col-xs-9">
                                     <select name="satuan" class="selectpicker show-tick form-control" data-live-search="true" title="Pilih Satuan" data-width="80%" placeholder="Pilih Satuan" required>
                                         <option>Milimeter</option>
                                         <option>Centimeter</option>
                                         <option>Meter</option>
                                     </select>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label class="control-label col-xs-3">Panjang</label>
-                                <div class="col-xs-9">
-                                    <input name="panjang" class=" form-control" type="number" placeholder="Panjang Barang..." style="width:335px;">
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label class="control-label col-xs-3">Lebar</label>
-                                <div class="col-xs-9">
-                                    <input name="lebar" class=" form-control" type="number" placeholder="Lebar Barang..." style="width:335px;">
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label class="control-label col-xs-3">Tinggi</label>
-                                <div class="col-xs-9">
-                                    <input name="tinggi" class=" form-control" type="number" placeholder="Tinggi Barang..." style="width:335px;">
                                 </div>
                             </div>
                             <div class="form-group">
@@ -222,7 +212,12 @@
                                     <input name="min_stok" class="form-control" type="number" placeholder="Minimal Stok..." style="width:335px;">
                                 </div>
                             </div>
-
+                            <div class="form-group">
+                                <label class="control-label col-xs-3">Nama Pemegang Barang</label>
+                                <div class="col-xs-9">
+                                    <input name="pemegang" required class="form-control" type="text" placeholder="Nama Pemegang Barang..." style="width:335px;">
+                                </div>
+                            </div>
 
                         </div>
 
@@ -241,17 +236,17 @@
             $id = $a['barang_id'];
             $nm = $a['barang_nama'];
             $satuan = $a['barang_satuan'];
-            $panjang = $a['barang_panjang'];
             $merk = $a['barang_merk'];
             $tipe = $a['barang_tipe'];
-            $lebar = $a['barang_lebar'];
-            $tinggi = $a['barang_tinggi'];
             $volume = $a['barang_volume'];
             $deskripsi = $a['barang_deskripsi'];
+            $pemegang = $a['barang_pemegang'];
             $stok = $a['barang_stok'];
             $min_stok = $a['barang_min_stok'];
             $kat_id = $a['barang_kategori_id'];
+            $sub_kat_id = $a['barang_sub_kategori_id'];
             $kat_nama = $a['kategori_nama'];
+            $sub_kat_nama = $a['sub_kategori_nama'];
         ?>
             <div id="modalEditPelanggan<?php echo $id ?>" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="largeModal" aria-hidden="true">
                 <div class="modal-dialog">
@@ -280,21 +275,21 @@
                                 <div class="form-group">
                                     <label class="control-label col-xs-3">Tipe</label>
                                     <div class="col-xs-9">
-                                        <input name="tipe" class="form-control" type="text" value="<?php echo $tipe; ?>" placeholder="Tipe..." style="width:335px;" required>
+                                        <input name="tipe" class="form-control" type="text" value="<?php echo $tipe; ?>" placeholder="Tipe..." style="width:335px;">
                                     </div>
                                 </div>
 
                                 <div class="form-group">
                                     <label class="control-label col-xs-3">Merk</label>
                                     <div class="col-xs-9">
-                                        <input name="merk" class="form-control" type="text" value="<?php echo $merk; ?>" placeholder="Merk..." style="width:335px;" required>
+                                        <input name="merk" class="form-control" type="text" value="<?php echo $merk; ?>" placeholder="Merk..." style="width:335px;">
                                     </div>
                                 </div>
 
                                 <div class="form-group">
                                     <label class="control-label col-xs-3">Deskripsi</label>
                                     <div class="col-xs-9">
-                                        <input name="deskripsi" class="form-control" type="text" value="<?php echo $deskripsi; ?>" placeholder="Deskripsi..." style="width:335px;" required>
+                                        <input name="deskripsi" class="form-control" type="text" value="<?php echo $deskripsi; ?>" placeholder="Deskripsi..." style="width:335px;">
                                     </div>
                                 </div>
 
@@ -317,6 +312,23 @@
                                 </div>
 
                                 <div class="form-group">
+                                    <label class="control-label col-xs-3">Sub Kategori</label>
+                                    <div class="col-xs-9">
+                                        <select name="subkategori" class="selectpicker show-tick form-control" data-live-search="true" title="Pilih Kategori" data-width="80%" placeholder="Pilih Kategori" required>
+                                            <?php foreach ($kat3->result_array() as $k3) {
+                                                $id_kat = $k3['kategori_id'];
+                                                $nm_kat = $k3['kategori_nama'];
+                                                if ($id_kat == $sub_kat_id)
+                                                    echo "<option value='$id_kat' selected>$nm_kat</option>";
+                                                else
+                                                    echo "<option value='$id_kat'>$nm_kat</option>";
+                                            }
+                                            ?>
+
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
                                     <label class="control-label col-xs-3">Satuan</label>
                                     <div class="col-xs-9">
                                         <select name="satuan" class="selectpicker show-tick form-control" data-live-search="true" title="Pilih Satuan" data-width="80%" placeholder="Pilih Satuan" required>
@@ -338,43 +350,28 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label class="control-label col-xs-3">Panjang</label>
-                                    <div class="col-xs-9">
-                                        <input name="panjang" class=" form-control" type="number" value="<?php echo $panjang; ?>" placeholder="Panjang..." style="width:335px;" required>
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <label class="control-label col-xs-3">Lebar</label>
-                                    <div class="col-xs-9">
-                                        <input name="lebar" class=" form-control" type="number" value="<?php echo $lebar; ?>" placeholder="Lebar..." style="width:335px;" required>
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <label class="control-label col-xs-3">Tinggi</label>
-                                    <div class="col-xs-9">
-                                        <input name="tinggi" class=" form-control" type="number" value="<?php echo $tinggi; ?>" placeholder="Tinggi..." style="width:335px;" required>
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
                                     <label class="control-label col-xs-3">Volume</label>
                                     <div class="col-xs-9">
-                                        <input name="volume" class=" form-control" type="number" value="<?php echo $volume; ?>" placeholder="Volume..." style="width:335px;" required>
+                                        <input name="volume" class=" form-control" type="number" value="<?php echo $volume; ?>" placeholder="Volume..." style="width:335px;">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label col-xs-3">Stok</label>
                                     <div class="col-xs-9">
-                                        <input name="stok" class="form-control" type="number" value="<?php echo $stok; ?>" placeholder="Stok..." style="width:335px;" required>
+                                        <input name="stok" class="form-control" type="number" value="<?php echo $stok; ?>" placeholder="Stok..." style="width:335px;">
                                     </div>
                                 </div>
 
                                 <div class="form-group">
                                     <label class="control-label col-xs-3">Minimal Stok</label>
                                     <div class="col-xs-9">
-                                        <input name="min_stok" class="form-control" type="number" value="<?php echo $min_stok; ?>" placeholder="Minimal Stok..." style="width:335px;" required>
+                                        <input name="min_stok" class="form-control" type="number" value="<?php echo $min_stok; ?>" placeholder="Minimal Stok..." style="width:335px;">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-xs-3">Nama Pemegang Barang</label>
+                                    <div class="col-xs-9">
+                                        <input name="pemegang" class="form-control" type="text" value="<?php echo $pemegang; ?>" placeholder="Nama Pemegang Barang..." style="width:335px;" required>
                                     </div>
                                 </div>
 
