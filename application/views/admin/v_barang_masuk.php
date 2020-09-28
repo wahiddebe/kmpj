@@ -150,10 +150,16 @@
                             <div class="form-group">
                                 <label class="control-label col-xs-3">Jumlah</label>
                                 <div class="col-xs-9">
-                                    <input name="jumlah" class=" form-control" type="number" placeholder="Jumlah Barang..." style="width:335px;">
+                                    <input name="jumlah" required class=" form-control" type="number" placeholder="Jumlah Barang..." style="width:335px;">
                                 </div>
                             </div>
 
+                            <div class="form-group">
+                                <label class="control-label col-xs-3">Orang yang membawa barang</label>
+                                <div class="col-xs-9">
+                                    <input name="pembawa" required class=" form-control" type="text" placeholder="Orang yang membawa barang..." style="width:335px;">
+                                </div>
+                            </div>
 
                         </div>
 
@@ -182,6 +188,7 @@
             $deskripsi = $a['barang_deskripsi'];
             $stok = $a['barang_stok'];
             $jumlah = $a['barang_jumlah'];
+            $pembawa = $a['barang_pembawa'];
             $min_stok = $a['barang_min_stok'];
             $kat_id = $a['barang_kategori_id'];
             $kat_nama = $a['kategori_nama'];
@@ -220,6 +227,12 @@
                                         <input name="jumlah" value="<?= $jumlah ?>" class=" form-control" type="number" placeholder="Jumlah Barang..." style="width:335px;">
                                     </div>
                                 </div>
+                                <div class="form-group">
+                                    <label class="control-label col-xs-3">Orang yang membawa barang</label>
+                                    <div class="col-xs-9">
+                                        <input name="pembawa" value="<?= $pembawa ?>" class=" form-control" type="text" placeholder="Orang yang membawa barang..." style="width:335px;">
+                                    </div>
+                                </div>
 
                             </div>
                             <div class="modal-footer">
@@ -237,7 +250,7 @@
         <!-- ============ MODAL HAPUS =============== -->
         <?php
         foreach ($data->result_array() as $a) {
-            $id = $a['barang_id'];
+            $id = $a['id'];
             $nm = $a['barang_nama'];
         ?>
             <div id="modalHapusPelanggan<?php echo $id ?>" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="largeModal" aria-hidden="true">

@@ -44,11 +44,22 @@
                     if ($group != '-')
                         echo "</table><br>";
                     echo "<table align='center' width='900px;' border='1'>";
-                    echo "<tr><td colspan='2'><b>Kategori: $kat</b></td> <td style='text-align:center;'></td></tr>";
+                    echo "<tr><td colspan='14'><b>Kategori: $kat</b></td> <td style='text-align:center;'></td></tr>";
                     echo "<tr style='background-color:#ccc;'>
     <td width='4%' align='center'>No</td>
+    <td width='4%' align='center'>ID</td>
     <td width='60%' align='center'>Nama Barang</td>
-    <td width='30%' align='center'>Jumlah Barang Keluar</td>
+    <td width='60%' align='center'>Kode Barang</td>
+    <td width='60%' align='center'>Tipe</td>
+    <td width='60%' align='center'>Merk</td>
+    <td width='60%' align='center'>Satuan</td>
+    <td width='60%' align='center'>Volume</td>
+    <td width='60%' align='center'>Deskripsi</td>
+    <td width='60%' align='center'>Kategori</td>
+    <td width='60%' align='center'>Sub Kategori</td>
+    <td width='60%' align='center'>Nama Pengambil Barang</td>
+    <td width='60%' align='center'>Jumlah Barang Keluar</td>
+    <td width='60%' align='center'>Tanggal Input</td>
     
     </tr>";
                     $nomor = 1;
@@ -62,8 +73,19 @@
             ?>
                 <tr>
                     <td style="text-align:center;vertical-align:top;text-align:center;"><?php echo $nomor; ?></td>
+                    <td style="vertical-align:top;padding-left:5px;"><?php echo $d['id']; ?></td>
                     <td style="vertical-align:top;padding-left:5px;"><?php echo $d['barang_nama']; ?></td>
+                    <td style="vertical-align:top;text-align:center;"><?php echo $d['barang_id']; ?></td>
+                    <td style="vertical-align:top;text-align:center;"><?php echo $d['barang_tipe']; ?></td>
+                    <td style="vertical-align:top;text-align:center;"><?php echo $d['barang_merk']; ?></td>
+                    <td style="vertical-align:top;text-align:center;"><?php echo $d['barang_satuan']; ?></td>
+                    <td style="vertical-align:top;text-align:center;"><?php echo $d['barang_volume']; ?></td>
+                    <td style="vertical-align:top;text-align:center;"><?php echo $d['barang_deskripsi']; ?></td>
+                    <td style="vertical-align:top;text-align:center;"><?php echo $d['kategori_nama']; ?></td>
+                    <td style="vertical-align:top;text-align:center;"><?php echo $d['sub_kategori_nama']; ?></td>
+                    <td style="vertical-align:top;text-align:center;"><?php echo $d['barang_pembawa']; ?></td>
                     <td style="vertical-align:top;text-align:center;"><?php echo $d['barang_jumlah']; ?></td>
+                    <td style="vertical-align:top;text-align:center;"><?php echo $d['barang_tgl_input']; ?></td>
                 </tr>
 
 

@@ -30,22 +30,13 @@ class Barang_masuk extends CI_Controller
 			$id = $this->m_barang_masuk->get_kobar();
 			$kobar = $this->input->post('barang');
 			$jumlah = $this->input->post('jumlah');
+			$pembawa = $this->input->post('pembawa');
 			$get_barang = $this->m_barang->get_barang($kobar);
 			foreach ($get_barang->result_array() as $items) {
 				$stok_lama = $items['barang_stok'];
-				$satuan = $items['barang_satuan'];
-				$nabar = $items['barang_nama'];
-				$panjang = $items['barang_panjang'];
-				$merk = $items['barang_merk'];
-				$tipe = $items['barang_tipe'];
-				$lebar = $items['barang_lebar'];
-				$tinggi = $items['barang_tinggi'];
-				$volume = $items['barang_volume'];
-				$deskripsi = $items['barang_deskripsi'];
-				$kat = $items['barang_kategori_id'];
 				$stok_baru = $stok_lama + $jumlah;
 				if ($stok_baru >= 0) {
-					$this->m_barang_masuk->simpan_barang($id, $kobar, $jumlah, $nabar, $kat, $satuan, $panjang, $lebar, $tinggi, $volume, $merk, $tipe, $deskripsi, $stok_baru);
+					$this->m_barang_masuk->simpan_barang($id, $kobar, $jumlah, $pembawa, $stok_baru);
 					redirect('admin/barang_masuk');
 				} else {
 					echo 'Gagal';
@@ -62,6 +53,7 @@ class Barang_masuk extends CI_Controller
 			$id = $this->input->post('id');
 			$kobar = $this->input->post('barang');
 			$jumlah = $this->input->post('jumlah');
+			$pembawa = $this->input->post('pembawa');
 			$get_barang = $this->m_barang->get_barang($kobar);
 			$get_barang_masuk = $this->m_barang_masuk->get_barang($id);
 			foreach ($get_barang->result_array() as $items) {
@@ -70,7 +62,7 @@ class Barang_masuk extends CI_Controller
 					$jumlah_lama = $items1['barang_jumlah'];
 					if ($jumlah_lama != $jumlah) {
 						$stok_baru = $stok_lama - $jumlah_lama + $jumlah;
-						$this->m_barang_masuk->update_barang($id, $kobar, $jumlah, $stok_baru);
+						$this->m_barang_masuk->update_barang($id, $kobar, $jumlah, $pembawa, $stok_baru);
 						redirect('admin/barang_masuk');
 					} else {
 						redirect('admin/barang_masuk');

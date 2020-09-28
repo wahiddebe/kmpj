@@ -1,7 +1,7 @@
 <html lang="en" moznomarginboxes mozdisallowselectionprint>
 
 <head>
-    <title>Laporan Barang Masuk Pertanggal</title>
+    <title>Laporan Barang Keluar Pertanggal</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="<?php echo base_url('assets/css/laporan.css') ?>" />
 </head>
@@ -16,9 +16,9 @@
 
         <table border="0" align="center" style="width:800px; border:none;margin-top:5px;margin-bottom:0px;">
             <tr>
-                <td colspan="2" style="width:800px;paddin-left:20px;">
+                <td colspan="2" style="width:800px;padding-left:20px;">
                     <center>
-                        <h4>LAPORAN BARANG MASUK</h4>
+                        <h4>LAPORAN BARANG KELUAR</h4>
                     </center><br />
                 </td>
             </tr>
@@ -44,7 +44,7 @@
                     <th>Tanggal</th>
                     <th>Kode Barang</th>
                     <th>Nama Barang</th>
-                    <th>Jumlah Barang Masuk</th>
+                    <th>Jumlah Barang Keluar</th>
                     <th>Orang Yang Membawa</th>
                 </tr>
             </thead>

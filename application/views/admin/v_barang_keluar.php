@@ -59,8 +59,9 @@
                             <th>Deskripsi</th>
                             <th>Kategori</th>
                             <th>Sub Kategori</th>
-                            <th>Nama Pembawa Barang</th>
-                            <th>Jumlah Barang Masuk</th>
+                            <th>Nama Pengambil Barang</th>
+                            <th>Keterangan</th>
+                            <th>Jumlah Barang Keluar</th>
                             <th>Tanggal Input</th>
                             <th style="width:100px;text-align:center;">Aksi</th>
                         </tr>
@@ -80,6 +81,7 @@
                             $deskripsi = $a['barang_deskripsi'];
                             $pemegang = $a['barang_pemegang'];
                             $pembawa = $a['barang_pembawa'];
+                            $keterangan = $a['barang_keterangan'];
                             $jumlah = $a['barang_jumlah'];
                             $tgl_input = $a['barang_tgl_input'];
                             $stok = $a['barang_stok'];
@@ -101,6 +103,7 @@
                                 <td style="text-align:center;"><?php echo $kat_nama; ?></td>
                                 <td style="text-align:center;"><?php echo $sub_kat_nama; ?></td>
                                 <td style="text-align:center;"><?php echo $pembawa; ?></td>
+                                <td style="text-align:center;"><?php echo $keterangan; ?></td>
                                 <td style="text-align:center;"><?php echo $jumlah; ?></td>
                                 <td><?php echo $tgl_input; ?></td>
                                 <td style="text-align:center;">
@@ -153,6 +156,18 @@
                                     <input name="jumlah" class=" form-control" type="number" placeholder="Jumlah Barang..." style="width:335px;">
                                 </div>
                             </div>
+                            <div class="form-group">
+                                <label class="control-label col-xs-3">Orang yang mengambil barang</label>
+                                <div class="col-xs-9">
+                                    <input name="pembawa" class=" form-control" type="text" placeholder="Orang yang mengambil barang..." style="width:335px;">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-xs-3">Keterangan</label>
+                                <div class="col-xs-9">
+                                    <input name="keterangan" class=" form-control" type="text" placeholder="Keterangan Barang..." style="width:335px;">
+                                </div>
+                            </div>
 
 
                         </div>
@@ -182,6 +197,8 @@
             $deskripsi = $a['barang_deskripsi'];
             $stok = $a['barang_stok'];
             $jumlah = $a['barang_jumlah'];
+            $pembawa = $a['barang_pembawa'];
+            $keterangan = $a['barang_keterangan'];
             $min_stok = $a['barang_min_stok'];
             $kat_id = $a['barang_kategori_id'];
             $kat_nama = $a['kategori_nama'];
@@ -220,6 +237,18 @@
                                         <input name="jumlah" value="<?= $jumlah ?>" class=" form-control" type="number" placeholder="Jumlah Barang..." style="width:335px;">
                                     </div>
                                 </div>
+                                <div class="form-group">
+                                    <label class="control-label col-xs-3">Orang yang mengambil barang</label>
+                                    <div class="col-xs-9">
+                                        <input name="pembawa" value="<?= $pembawa ?>" class=" form-control" type="text" placeholder="Orang yang mengambil barang..." style="width:335px;">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-xs-3">Keterangan</label>
+                                    <div class="col-xs-9">
+                                        <input name="keterangan" value="<?= $keterangan ?>" class=" form-control" type="text" placeholder="Keterangan Barang..." style="width:335px;">
+                                    </div>
+                                </div>
 
                             </div>
                             <div class="modal-footer">
@@ -237,7 +266,7 @@
         <!-- ============ MODAL HAPUS =============== -->
         <?php
         foreach ($data->result_array() as $a) {
-            $id = $a['barang_id'];
+            $id = $a['id'];
             $nm = $a['barang_nama'];
         ?>
             <div id="modalHapusPelanggan<?php echo $id ?>" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="largeModal" aria-hidden="true">

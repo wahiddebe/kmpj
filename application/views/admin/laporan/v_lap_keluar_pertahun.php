@@ -1,7 +1,7 @@
 <html lang="en" moznomarginboxes mozdisallowselectionprint>
 
 <head>
-    <title>laporan data barang </title>
+    <title>laporan barang keluar pertahun</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="<?php echo base_url('assets/css/laporan.css') ?>" />
 </head>
@@ -13,12 +13,15 @@
     <td><img src="<?php// echo base_url().'assets/img/kop_surat.png'?>"/></td>
 </tr>-->
         </table>
+        <?php
+        $b = $jml->row_array();
+        ?>
 
         <table border="0" align="center" style="width:800px; border:none;margin-top:5px;margin-bottom:0px;">
             <tr>
                 <td colspan="2" style="width:800px;padding-left:20px;">
                     <center>
-                        <h4>LAPORAN BARANG</h4>
+                        <h4>LAPORAN BARANG KELUAR TAHUN <?php echo $b['barang_tahun']; ?></h4>
                     </center><br />
                 </td>
             </tr>
@@ -36,37 +39,31 @@
             $urut = 0;
             $nomor = 0;
             $group = '-';
-            foreach ($data->result_array() as $d) {
+            foreach ($jml->result_array() as $d) {
                 $nomor++;
                 $urut++;
-                if ($group == '-' || $group != $d['kategori_nama']) {
-                    $kat = $d['kategori_nama'];
-                    $query = $this->db->query("SELECT kategori_id,kategori_nama,barang_nama,SUM(barang_stok) AS tot_stok FROM tbl_kategori JOIN tbl_barang ON kategori_id=barang_kategori_id WHERE kategori_nama='$kat'");
-                    $t = $query->row_array();
-                    $tots = $t['tot_stok'];
+                if ($group == '-' || $group != $d['barang_bulan']) {
+                    $bulan = $d['barang_bulan'];
+                    // $query = $this->db->query("SELECT jual_nofak,DATE_FORMAT(jual_tanggal,'%M %Y') AS bulan,DATE_FORMAT(jual_tanggal,'%d %M %Y') AS jual_tanggal,d_jual_barang_id,d_jual_barang_nama,d_jual_barang_satuan,d_jual_barang_harpok,d_jual_barang_harjul,d_jual_qty,d_jual_diskon,SUM(d_jual_total) AS total FROM tbl_jual JOIN tbl_detail_jual ON jual_nofak=d_jual_nofak WHERE DATE_FORMAT(jual_tanggal,'%M %Y')='$bulan'");
+                    // $t = $query->row_array();
+                    // $tots = $t['total'];
                     if ($group != '-')
                         echo "</table><br>";
                     echo "<table align='center' width='900px;' border='1'>";
-                    echo "<tr><td colspan='12'><b>Kategori: $kat</b></td> <td style='text-align:center;'></td></tr>";
+                    echo "<tr><td colspan='8'><b>Bulan: $bulan</b></td>";
                     echo "<tr style='background-color:#ccc;'>
-    <td width='4%' align='center'>No</td>
-    <td width='60%' align='center'>Nama Barang</td>
-    <td width='60%' align='center'>Kode Barang</td>
-    <td width='60%' align='center'>Tipe</td>
-    <td width='60%' align='center'>Merk</td>
-    <td width='60%' align='center'>Satuan</td>
-    <td width='60%' align='center'>Volume</td>
-    <td width='60%' align='center'>Deskripsi</td>
-    <td width='60%' align='center'>Stok</td>
-    <td width='60%' align='center'>Min Stok</td>
-    <td width='60%' align='center'>Kategori</td>
-    <td width='60%' align='center'>Sub Kategori</td>
-    <td width='60%' align='center'>Nama Pemegang Barang</td>
+    <td width='3%' align='center'>No</td>
+    <td>ID</td>
+    <td>Tanggal</td>
+    <td>Kode Barang</td>
+    <td>Nama Barang</td>
+    <td>Jumlah Barang Keluar</td>
+    <td>Orang Yang Membawa</td>
     
     </tr>";
                     $nomor = 1;
                 }
-                $group = $d['kategori_nama'];
+                $group = $d['barang_bulan'];
                 if ($urut == 500) {
                     $nomor = 0;
                     echo "<div class='pagebreak'> </div>";
@@ -75,18 +72,12 @@
             ?>
                 <tr>
                     <td style="text-align:center;vertical-align:top;text-align:center;"><?php echo $nomor; ?></td>
+                    <td style="vertical-align:top;padding-left:5px;"><?php echo $d['id']; ?></td>
+                    <td style="vertical-align:top;text-align:center;"><?php echo $d['barang_tanggal']; ?></td>
+                    <td style="vertical-align:top;padding-left:5px;"><?php echo $d['barang_id']; ?></td>
                     <td style="vertical-align:top;padding-left:5px;"><?php echo $d['barang_nama']; ?></td>
-                    <td style="vertical-align:top;text-align:center;"><?php echo $d['barang_id']; ?></td>
-                    <td style="vertical-align:top;text-align:center;"><?php echo $d['barang_tipe']; ?></td>
-                    <td style="vertical-align:top;text-align:center;"><?php echo $d['barang_merk']; ?></td>
-                    <td style="vertical-align:top;text-align:center;"><?php echo $d['barang_satuan']; ?></td>
-                    <td style="vertical-align:top;text-align:center;"><?php echo $d['barang_volume']; ?></td>
-                    <td style="vertical-align:top;text-align:center;"><?php echo $d['barang_deskripsi']; ?></td>
-                    <td style="vertical-align:top;text-align:center;"><?php echo $d['barang_stok']; ?></td>
-                    <td style="vertical-align:top;text-align:center;"><?php echo $d['barang_min_stok']; ?></td>
-                    <td style="vertical-align:top;text-align:center;"><?php echo $d['kategori_nama']; ?></td>
-                    <td style="vertical-align:top;text-align:center;"><?php echo $d['sub_kategori_nama']; ?></td>
-                    <td style="vertical-align:top;text-align:center;"><?php echo $d['barang_pemegang']; ?></td>
+                    <td style="vertical-align:top;padding-left:5px;"><?php echo $d['barang_jumlah']; ?></td>
+                    <td style="vertical-align:top;padding-left:5px;"><?php echo $d['barang_pembawa']; ?></td>
                 </tr>
 
 

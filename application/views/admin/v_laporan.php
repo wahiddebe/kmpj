@@ -9,7 +9,7 @@
     <meta name="description" content="Produk By Mfikri.com">
     <meta name="author" content="AKSANTARA">
 
-    <title>Welcome To Point of Sale Apps</title>
+    <title>Laporan</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="<?php echo base_url() . 'assets/css/bootstrap.min.css' ?>" rel="stylesheet">
@@ -70,10 +70,54 @@
                             </td>
                         </tr>
                         <tr>
-                            <td style="text-align:center;vertical-align:middle">2</td>
+                            <td style="text-align:center;vertical-align:middle">3</td>
                             <td style="vertical-align:middle;">Laporan Barang Keseluruhan</td>
                             <td style="text-align:center;">
                                 <a class="btn btn-sm btn-default" href="<?php echo base_url() . 'admin/laporan/lap_stok_barang' ?>" target="_blank"><span class="fa fa-print"></span> Print</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align:center;vertical-align:middle">4</td>
+                            <td style="vertical-align:middle;">Laporan Barang Masuk PerTanggal</td>
+                            <td style="text-align:center;">
+                                <a class="btn btn-sm btn-default" href="#lap_masuk_pertanggal" data-toggle="modal"><span class="fa fa-print"></span> Print</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align:center;vertical-align:middle">5</td>
+                            <td style="vertical-align:middle;">Laporan Barang Masuk PerBulan</td>
+                            <td style="text-align:center;">
+                                <a class="btn btn-sm btn-default" href="#lap_masuk_perbulan" data-toggle="modal"><span class="fa fa-print"></span> Print</a>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td style="text-align:center;vertical-align:middle">6 </td>
+                            <td style="vertical-align:middle;">Laporan Barang Masuk PerTahun</td>
+                            <td style="text-align:center;">
+                                <a class="btn btn-sm btn-default" href="#lap_masuk_pertahun" data-toggle="modal"><span class="fa fa-print"></span> Print</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align:center;vertical-align:middle">7</td>
+                            <td style="vertical-align:middle;">Laporan Barang Keluar PerTanggal</td>
+                            <td style="text-align:center;">
+                                <a class="btn btn-sm btn-default" href="#lap_keluar_pertanggal" data-toggle="modal"><span class="fa fa-print"></span> Print</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align:center;vertical-align:middle">8</td>
+                            <td style="vertical-align:middle;">Laporan Barang Keluar PerBulan</td>
+                            <td style="text-align:center;">
+                                <a class="btn btn-sm btn-default" href="#lap_keluar_perbulan" data-toggle="modal"><span class="fa fa-print"></span> Print</a>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td style="text-align:center;vertical-align:middle">9 </td>
+                            <td style="vertical-align:middle;">Laporan Barang Keluar PerTahun</td>
+                            <td style="text-align:center;">
+                                <a class="btn btn-sm btn-default" href="#lap_keluar_pertahun" data-toggle="modal"><span class="fa fa-print"></span> Print</a>
                             </td>
                         </tr>
 
@@ -81,16 +125,15 @@
                 </table>
             </div>
         </div>
-        <!-- /.row -->
         <!-- ============ MODAL ADD =============== -->
-        <div class="modal fade" id="lap_jual_pertanggal" tabindex="-1" role="dialog" aria-labelledby="largeModal" aria-hidden="true">
+        <div class="modal fade" id="lap_masuk_pertanggal" tabindex="-1" role="dialog" aria-labelledby="largeModal" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                         <h3 class="modal-title" id="myModalLabel">Pilih Tanggal</h3>
                     </div>
-                    <form class="form-horizontal" method="post" action="<?php echo base_url() . 'admin/laporan/lap_penjualan_pertanggal' ?>" target="_blank">
+                    <form class="form-horizontal" method="post" action="<?php echo base_url() . 'admin/laporan/lap_masuk_pertanggal' ?>" target="_blank">
                         <div class="modal-body">
 
                             <div class="form-group">
@@ -116,16 +159,15 @@
                 </div>
             </div>
         </div>
-
         <!-- ============ MODAL ADD =============== -->
-        <div class="modal fade" id="lap_jual_perbulan" tabindex="-1" role="dialog" aria-labelledby="largeModal" aria-hidden="true">
+        <div class="modal fade" id="lap_masuk_perbulan" tabindex="-1" role="dialog" aria-labelledby="largeModal" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                         <h3 class="modal-title" id="myModalLabel">Pilih Bulan</h3>
                     </div>
-                    <form class="form-horizontal" method="post" action="<?php echo base_url() . 'admin/laporan/lap_penjualan_perbulan' ?>" target="_blank">
+                    <form class="form-horizontal" method="post" action="<?php echo base_url() . 'admin/laporan/lap_masuk_perbulan' ?>" target="_blank">
                         <div class="modal-body">
 
                             <div class="form-group">
@@ -152,16 +194,14 @@
                 </div>
             </div>
         </div>
-
-        <!-- ============ MODAL ADD =============== -->
-        <div class="modal fade" id="lap_jual_pertahun" tabindex="-1" role="dialog" aria-labelledby="largeModal" aria-hidden="true">
+        <div class="modal fade" id="lap_masuk_pertahun" tabindex="-1" role="dialog" aria-labelledby="largeModal" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                         <h3 class="modal-title" id="myModalLabel">Pilih Tahun</h3>
                     </div>
-                    <form class="form-horizontal" method="post" action="<?php echo base_url() . 'admin/laporan/lap_penjualan_pertahun' ?>" target="_blank">
+                    <form class="form-horizontal" method="post" action="<?php echo base_url() . 'admin/laporan/lap_masuk_pertahun' ?>" target="_blank">
                         <div class="modal-body">
 
                             <div class="form-group">
@@ -188,24 +228,56 @@
                 </div>
             </div>
         </div>
-
-
         <!-- ============ MODAL ADD =============== -->
-        <div class="modal fade" id="lap_laba_rugi" tabindex="-1" role="dialog" aria-labelledby="largeModal" aria-hidden="true">
+        <div class="modal fade" id="lap_keluar_pertanggal" tabindex="-1" role="dialog" aria-labelledby="largeModal" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                        <h3 class="modal-title" id="myModalLabel">Pilih Tanggal</h3>
+                    </div>
+                    <form class="form-horizontal" method="post" action="<?php echo base_url() . 'admin/laporan/lap_keluar_pertanggal' ?>" target="_blank">
+                        <div class="modal-body">
+
+                            <div class="form-group">
+                                <label class="control-label col-xs-3">Tanggal</label>
+                                <div class="col-xs-9">
+                                    <div class='input-group date' id='datepicker2' style="width:300px;">
+                                        <input type='text' name="tgl" class="form-control" value="" placeholder="Tanggal..." required />
+                                        <span class="input-group-addon">
+                                            <span class="glyphicon glyphicon-calendar"></span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+
+                        <div class="modal-footer">
+                            <button class="btn" data-dismiss="modal" aria-hidden="true">Tutup</button>
+                            <button class="btn btn-info"><span class="fa fa-print"></span> Cetak</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- ============ MODAL ADD =============== -->
+        <div class="modal fade" id="lap_keluar_perbulan" tabindex="-1" role="dialog" aria-labelledby="largeModal" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                         <h3 class="modal-title" id="myModalLabel">Pilih Bulan</h3>
                     </div>
-                    <form class="form-horizontal" method="post" action="<?php echo base_url() . 'admin/laporan/lap_laba_rugi' ?>" target="_blank">
+                    <form class="form-horizontal" method="post" action="<?php echo base_url() . 'admin/laporan/lap_keluar_perbulan' ?>" target="_blank">
                         <div class="modal-body">
 
                             <div class="form-group">
                                 <label class="control-label col-xs-3">Bulan</label>
                                 <div class="col-xs-9">
                                     <select name="bln" class="selectpicker show-tick form-control" data-live-search="true" title="Pilih Bulan" data-width="80%" required />
-                                    <?php foreach ($jual_bln->result_array() as $k) {
+                                    <?php foreach ($jual_bln_keluar->result_array() as $k) {
                                         $bln = $k['bulan'];
                                     ?>
                                         <option><?php echo $bln; ?></option>
@@ -225,9 +297,43 @@
                 </div>
             </div>
         </div>
+        <div class="modal fade" id="lap_keluar_pertahun" tabindex="-1" role="dialog" aria-labelledby="largeModal" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                        <h3 class="modal-title" id="myModalLabel">Pilih Tahun</h3>
+                    </div>
+                    <form class="form-horizontal" method="post" action="<?php echo base_url() . 'admin/laporan/lap_keluar_pertahun' ?>" target="_blank">
+                        <div class="modal-body">
+
+                            <div class="form-group">
+                                <label class="control-label col-xs-3">Tahun</label>
+                                <div class="col-xs-9">
+                                    <select name="thn" class="selectpicker show-tick form-control" data-live-search="true" title="Pilih Tahun" data-width="80%" required />
+                                    <?php foreach ($jual_thn_keluar->result_array() as $t) {
+                                        $thn = $t['tahun'];
+                                    ?>
+                                        <option><?php echo $thn; ?></option>
+                                    <?php } ?>
+                                    </select>
+                                </div>
+                            </div>
 
 
-        <!--END MODAL-->
+                        </div>
+
+                        <div class="modal-footer">
+                            <button class="btn" data-dismiss="modal" aria-hidden="true">Tutup</button>
+                            <button class="btn btn-info"><span class="fa fa-print"></span> Cetak</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+
 
         <hr>
 
