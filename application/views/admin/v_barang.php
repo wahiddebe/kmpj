@@ -186,9 +186,23 @@
                                 <label class="control-label col-xs-3">Satuan</label>
                                 <div class="col-xs-9">
                                     <select name="satuan" class="selectpicker show-tick form-control" data-live-search="true" title="Pilih Satuan" data-width="80%" placeholder="Pilih Satuan" required>
-                                        <option>Milimeter</option>
+
                                         <option>Centimeter</option>
                                         <option>Meter</option>
+                                        <option>Dus</option>
+                                        <option>Ikat</option>
+                                        <option>Kaleng</option>
+                                        <option>Kg</option>
+                                        <option>Lembar</option>
+                                        <option>Liter</option>
+                                        <option>Pack</option>
+                                        <option>pcs</option>
+                                        <option>Roll</option>
+                                        <option>Set</option>
+                                        <option>Tabung</option>
+                                        <option>Unit</option>
+                                        <option>BA</option>
+                                        <option>Kosong</option>
                                     </select>
                                 </div>
                             </div>
@@ -332,18 +346,279 @@
                                     <label class="control-label col-xs-3">Satuan</label>
                                     <div class="col-xs-9">
                                         <select name="satuan" class="selectpicker show-tick form-control" data-live-search="true" title="Pilih Satuan" data-width="80%" placeholder="Pilih Satuan" required>
-                                            <?php if ($satuan == 'Milimeter') : ?>
-                                                <option selected>Milimeter</option>
+
+                                            <?php if ($satuan == 'Meter') : ?>
+                                                <option selected>Meter</option>
                                                 <option>Centimeter</option>
-                                                <option>Meter</option>
+                                                <option>Dus</option>
+                                                <option>Ikat</option>
+                                                <option>Kaleng</option>
+                                                <option>Kg</option>
+                                                <option>Lembar</option>
+                                                <option>Liter</option>
+                                                <option>Pack</option>
+                                                <option>pcs</option>
+                                                <option>Roll</option>
+                                                <option>Set</option>
+                                                <option>Tabung</option>
+                                                <option>Unit</option>
+                                                <option>BA</option>
+                                                <option>Kosong</option>
                                             <?php elseif ($satuan == 'Centimeter') : ?>
-                                                <option>Milimeter</option>
                                                 <option selected>Centimeter</option>
                                                 <option>Meter</option>
-                                            <?php else : ?>
-                                                <option>Milimeter</option>
+                                                <option>Dus</option>
+                                                <option>Ikat</option>
+                                                <option>Kaleng</option>
+                                                <option>Kg</option>
+                                                <option>Lembar</option>
+                                                <option>Liter</option>
+                                                <option>Pack</option>
+                                                <option>pcs</option>
+                                                <option>Roll</option>
+                                                <option>Set</option>
+                                                <option>Tabung</option>
+                                                <option>Unit</option>
+                                                <option>BA</option>
+                                                <option>Kosong</option>
+                                            <?php elseif ($satuan == 'Dus') : ?>
                                                 <option>Centimeter</option>
-                                                <option selected>Meter</option>
+                                                <option>Meter</option>
+                                                <option selected>Dus</option>
+                                                <option>Ikat</option>
+                                                <option>Kaleng</option>
+                                                <option>Kg</option>
+                                                <option>Lembar</option>
+                                                <option>Liter</option>
+                                                <option>Pack</option>
+                                                <option>pcs</option>
+                                                <option>Roll</option>
+                                                <option>Set</option>
+                                                <option>Tabung</option>
+                                                <option>Unit</option>
+                                                <option>BA</option>
+                                                <option>Kosong</option>
+                                            <?php elseif ($satuan == 'Ikat') : ?>
+                                                <option>Centimeter</option>
+                                                <option>Meter</option>
+                                                <option>Dus</option>
+                                                <option selected>Ikat</option>
+                                                <option>Kaleng</option>
+                                                <option>Kg</option>
+                                                <option>Lembar</option>
+                                                <option>Liter</option>
+                                                <option>Pack</option>
+                                                <option>pcs</option>
+                                                <option>Roll</option>
+                                                <option>Set</option>
+                                                <option>Tabung</option>
+                                                <option>Unit</option>
+                                                <option>BA</option>
+                                                <option>Kosong</option>
+                                            <?php elseif ($satuan == 'Kaleng') : ?>
+                                                <option selected>Centimeter</option>
+                                                <option>Meter</option>
+                                                <option>Dus</option>
+                                                <option>Ikat</option>
+                                                <option Kaleng>Kaleng</option>
+                                                <option>Kg</option>
+                                                <option>Lembar</option>
+                                                <option>Liter</option>
+                                                <option>Pack</option>
+                                                <option>pcs</option>
+                                                <option>Roll</option>
+                                                <option>Set</option>
+                                                <option>Tabung</option>
+                                                <option>Unit</option>
+                                                <option>BA</option>
+                                                <option>Kosong</option>
+                                            <?php elseif ($satuan == 'Kg') : ?>
+                                                <option selected>Centimeter</option>
+                                                <option>Meter</option>
+                                                <option>Dus</option>
+                                                <option>Ikat</option>
+                                                <option>Kaleng</option>
+                                                <option selected>Kg</option>
+                                                <option>Lembar</option>
+                                                <option>Liter</option>
+                                                <option>Pack</option>
+                                                <option>pcs</option>
+                                                <option>Roll</option>
+                                                <option>Set</option>
+                                                <option>Tabung</option>
+                                                <option>Unit</option>
+                                                <option>BA</option>
+                                                <option>Kosong</option>
+                                            <?php elseif ($satuan == 'Lembar') : ?>
+                                                <option selected>Centimeter</option>
+                                                <option>Meter</option>
+                                                <option>Dus</option>
+                                                <option>Ikat</option>
+                                                <option>Kaleng</option>
+                                                <option>Kg</option>
+                                                <option selected>Lembar</option>
+                                                <option>Liter</option>
+                                                <option>Pack</option>
+                                                <option>pcs</option>
+                                                <option>Roll</option>
+                                                <option>Set</option>
+                                                <option>Tabung</option>
+                                                <option>Unit</option>
+                                                <option>BA</option>
+                                                <option>Kosong</option>
+                                            <?php elseif ($satuan == 'Liter') : ?>
+                                                <option selected>Centimeter</option>
+                                                <option>Meter</option>
+                                                <option>Dus</option>
+                                                <option>Ikat</option>
+                                                <option>Kaleng</option>
+                                                <option>Kg</option>
+                                                <option>Lembar</option>
+                                                <option selected>Liter</option>
+                                                <option>Pack</option>
+                                                <option>pcs</option>
+                                                <option>Roll</option>
+                                                <option>Set</option>
+                                                <option>Tabung</option>
+                                                <option>Unit</option>
+                                                <option>BA</option>
+                                                <option>Kosong</option>
+                                            <?php elseif ($satuan == 'Pack') : ?>
+                                                <option selected>Centimeter</option>
+                                                <option>Meter</option>
+                                                <option>Dus</option>
+                                                <option>Ikat</option>
+                                                <option>Kaleng</option>
+                                                <option>Kg</option>
+                                                <option>Lembar</option>
+                                                <option>Liter</option>
+                                                <option selected>Pack</option>
+                                                <option>pcs</option>
+                                                <option>Roll</option>
+                                                <option>Set</option>
+                                                <option>Tabung</option>
+                                                <option>Unit</option>
+                                                <option>BA</option>
+                                                <option>Kosong</option>
+                                            <?php elseif ($satuan == 'pcs') : ?>
+                                                <option selected>Centimeter</option>
+                                                <option>Meter</option>
+                                                <option>Dus</option>
+                                                <option>Ikat</option>
+                                                <option>Kaleng</option>
+                                                <option>Kg</option>
+                                                <option>Lembar</option>
+                                                <option>Liter</option>
+                                                <option>Pack</option>
+                                                <option selected>pcs</option>
+                                                <option>Roll</option>
+                                                <option>Set</option>
+                                                <option>Tabung</option>
+                                                <option>Unit</option>
+                                                <option>BA</option>
+                                                <option>Kosong</option>
+                                            <?php elseif ($satuan == 'Roll') : ?>
+                                                <option selected>Centimeter</option>
+                                                <option>Meter</option>
+                                                <option>Dus</option>
+                                                <option>Ikat</option>
+                                                <option>Kaleng</option>
+                                                <option>Kg</option>
+                                                <option>Lembar</option>
+                                                <option>Liter</option>
+                                                <option>Pack</option>
+                                                <option>pcs</option>
+                                                <option selected>Roll</option>
+                                                <option>Set</option>
+                                                <option>Tabung</option>
+                                                <option>Unit</option>
+                                                <option>BA</option>
+                                                <option>Kosong</option>
+                                            <?php elseif ($satuan == 'Set') : ?>
+                                                <option>Centimeter</option>
+                                                <option>Meter</option>
+                                                <option>Dus</option>
+                                                <option>Ikat</option>
+                                                <option>Kaleng</option>
+                                                <option>Kg</option>
+                                                <option>Lembar</option>
+                                                <option>Liter</option>
+                                                <option>Pack</option>
+                                                <option>pcs</option>
+                                                <option>Roll</option>
+                                                <option selected>Set</option>
+                                                <option>Tabung</option>
+                                                <option>Unit</option>
+                                                <option>BA</option>
+                                                <option>Kosong</option>
+                                            <?php elseif ($satuan == 'Tabung') : ?>
+                                                <option>Centimeter</option>
+                                                <option>Meter</option>
+                                                <option>Dus</option>
+                                                <option>Ikat</option>
+                                                <option>Kaleng</option>
+                                                <option>Kg</option>
+                                                <option>Lembar</option>
+                                                <option>Liter</option>
+                                                <option>Pack</option>
+                                                <option>pcs</option>
+                                                <option>Roll</option>
+                                                <option>Set</option>
+                                                <option selected>Tabung</option>
+                                                <option>Unit</option>
+                                                <option>BA</option>
+                                                <option>Kosong</option>
+                                            <?php elseif ($satuan == 'Unit') : ?>
+                                                <option>Centimeter</option>
+                                                <option>Meter</option>
+                                                <option>Dus</option>
+                                                <option>Ikat</option>
+                                                <option>Kaleng</option>
+                                                <option>Kg</option>
+                                                <option>Lembar</option>
+                                                <option>Liter</option>
+                                                <option>Pack</option>
+                                                <option>pcs</option>
+                                                <option>Roll</option>
+                                                <option>Set</option>
+                                                <option>Tabung</option>
+                                                <option selected>Unit</option>
+                                                <option>BA</option>
+                                                <option>Kosong</option>
+                                            <?php elseif ($satuan == 'BA') : ?>
+                                                <option>Centimeter</option>
+                                                <option>Meter</option>
+                                                <option>Dus</option>
+                                                <option>Ikat</option>
+                                                <option>Kaleng</option>
+                                                <option>Kg</option>
+                                                <option>Lembar</option>
+                                                <option>Liter</option>
+                                                <option>Pack</option>
+                                                <option>pcs</option>
+                                                <option>Roll</option>
+                                                <option>Set</option>
+                                                <option>Tabung</option>
+                                                <option>Unit</option>
+                                                <option selected>BA</option>
+                                                <option>Kosong</option>
+                                            <?php else : ?>
+                                                <option>Meter</option>
+                                                <option>Centimeter</option>
+                                                <option>Dus</option>
+                                                <option>Ikat</option>
+                                                <option>Kaleng</option>
+                                                <option>Kg</option>
+                                                <option>Lembar</option>
+                                                <option>Liter</option>
+                                                <option>Pack</option>
+                                                <option>pcs</option>
+                                                <option>Roll</option>
+                                                <option>Set</option>
+                                                <option>Tabung</option>
+                                                <option>Unit</option>
+                                                <option>BA</option>
+                                                <option selected>Kosong</option>
                                             <?php endif ?>
                                         </select>
                                     </div>

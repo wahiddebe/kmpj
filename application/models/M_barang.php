@@ -17,7 +17,7 @@ class M_barang extends CI_Model
 
 	function tampil_barang()
 	{
-		$hsl = $this->db->query("SELECT barang_id,barang_nama,barang_tipe,barang_merk,barang_satuan,barang_panjang,barang_lebar,barang_tinggi,barang_volume,barang_deskripsi,barang_stok,barang_min_stok,barang_pemegang,barang_kategori_id,barang_sub_kategori_id,tbl_kategori.kategori_nama AS kategori_nama,tbl_sub_kategori.kategori_nama AS sub_kategori_nama FROM tbl_barang JOIN tbl_kategori ON tbl_barang.barang_kategori_id=tbl_kategori.kategori_id JOIN tbl_sub_kategori ON tbl_barang.barang_sub_kategori_id = tbl_sub_kategori.kategori_id  ");
+		$hsl = $this->db->query("SELECT barang_id,barang_nama,barang_tipe,barang_merk,barang_satuan,barang_volume,barang_deskripsi,barang_stok,barang_min_stok,barang_pemegang,barang_kategori_id,barang_sub_kategori_id,tbl_kategori.kategori_nama AS kategori_nama,tbl_sub_kategori.kategori_nama AS sub_kategori_nama FROM tbl_barang JOIN tbl_kategori ON tbl_barang.barang_kategori_id=tbl_kategori.kategori_id JOIN tbl_sub_kategori ON tbl_barang.barang_sub_kategori_id = tbl_sub_kategori.kategori_id ");
 		return $hsl;
 	}
 
