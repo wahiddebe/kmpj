@@ -38,9 +38,11 @@ class Barang_keluar extends CI_Controller
 				$stok_baru = $stok_lama - $jumlah;
 				if ($stok_baru >= 0) {
 					$this->m_barang_keluar->simpan_barang($id, $kobar, $jumlah, $pembawa, $keterangan, $stok_baru);
+					$this->session->set_flashdata('pesan', 'Data Berhasil Disimpan :)');
 					redirect('admin/barang_keluar');
 				} else {
-					echo 'Stok Kurang';
+					$this->session->set_flashdata('pesan', 'Stok Kurang :(');
+					redirect('admin/barang_keluar');
 				}
 			}
 		}

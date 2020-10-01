@@ -14,6 +14,7 @@ class Laporan extends CI_Controller
 		$this->load->model('m_pembelian');
 		$this->load->model('m_penjualan');
 		$this->load->model('m_laporan');
+		$this->load->model('m_sub_kategori');
 	}
 	function index()
 	{
@@ -24,6 +25,7 @@ class Laporan extends CI_Controller
 			$data['jual_thn'] = $this->m_laporan->get_tahun_masuk();
 			$data['jual_bln_keluar'] = $this->m_laporan->get_bulan_keluar();
 			$data['jual_thn_keluar'] = $this->m_laporan->get_tahun_keluar();
+			$data['kat3'] = $this->m_sub_kategori->tampil_kategori();
 			$this->load->view('admin/v_laporan', $data);
 		} else {
 			echo "Halaman tidak ditemukan";
@@ -46,6 +48,18 @@ class Laporan extends CI_Controller
 		$this->load->view('admin/laporan/v_lap_stok_barang', $x);
 	}
 
+	function lap_keluar_perkategori()
+	{
+		$subkategori = $this->input->post('subkategori');
+		$x['jml'] = $this->m_laporan->get_data__total_keluar_perkategori($subkategori);
+		$this->load->view('admin/laporan/v_lap_keluar_perkategori', $x);
+	}
+	function lap_masuk_perkategori()
+	{
+		$subkategori = $this->input->post('subkategori');
+		$x['jml'] = $this->m_laporan->get_data__total_masuk_perkategori($subkategori);
+		$this->load->view('admin/laporan/v_lap_jual_perkategori', $x);
+	}
 	function lap_masuk_pertanggal()
 	{
 		$tanggal = $this->input->post('tgl');

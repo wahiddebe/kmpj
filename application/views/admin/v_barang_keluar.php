@@ -37,6 +37,14 @@
             <div class="col-lg-12">
                 <h1 class="page-header">Data
                     <small>Barang Keluar</small>
+                    <?php
+
+                    if ($this->session->flashdata('pesan')) {
+                        echo '<div class=" alert-danger ">';
+                        echo $this->session->flashdata('pesan');
+                        echo '</div>';
+                    }
+                    ?>
                     <div class="pull-right"><a href="#" class="btn btn-sm btn-success" data-toggle="modal" data-target="#largeModal"><span class="fa fa-plus"></span> Tambah Barang</a></div>
                 </h1>
             </div>

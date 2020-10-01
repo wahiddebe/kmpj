@@ -32,9 +32,19 @@ class M_laporan extends CI_Model
 	// 	$hsl=$this->db->query("SELECT jual_nofak,DATE_FORMAT(jual_tanggal,'%d %M %Y') AS jual_tanggal,d_jual_barang_id,d_jual_barang_nama,d_jual_barang_satuan,d_jual_barang_harpok,d_jual_barang_harjul,d_jual_qty,d_jual_diskon,d_jual_total FROM tbl_jual JOIN tbl_detail_jual ON jual_nofak=d_jual_nofak WHERE DATE(jual_tanggal)='$tanggal' ORDER BY jual_nofak DESC");
 	// 	return $hsl;
 	// }
+	function get_data__total_masuk_perkategori($subkategori)
+	{
+		$hsl = $this->db->query("SELECT tbl_barang_masuk.barang_id as barang_id,id,date_format(tbl_barang_masuk.barang_tgl_input,'%d %M %Y') AS barang_tgl_input,barang_pembawa,barang_nama,barang_tipe,barang_merk,barang_satuan,barang_jumlah,barang_panjang,barang_lebar,barang_tinggi,barang_volume,barang_deskripsi,barang_stok,barang_min_stok,barang_pemegang,barang_kategori_id,barang_sub_kategori_id,tbl_kategori.kategori_nama AS kategori_nama,tbl_sub_kategori.kategori_nama AS sub_kategori_nama FROM tbl_barang JOIN tbl_kategori ON tbl_barang.barang_kategori_id=tbl_kategori.kategori_id JOIN tbl_sub_kategori ON tbl_barang.barang_sub_kategori_id = tbl_sub_kategori.kategori_id join tbl_barang_masuk on tbl_barang.barang_id = tbl_barang_masuk.barang_id where tbl_barang.barang_sub_kategori_id = '$subkategori' ");
+		return $hsl;
+	}
+	function get_data__total_keluar_perkategori($subkategori)
+	{
+		$hsl = $this->db->query("SELECT tbl_barang_keluar.barang_id as barang_id,id,date_format(tbl_barang_keluar.barang_tgl_input,'%d %M %Y') AS barang_tgl_input,barang_pembawa,barang_nama,barang_tipe,barang_merk,barang_satuan,barang_jumlah,barang_panjang,barang_lebar,barang_tinggi,barang_volume,barang_deskripsi,barang_stok,barang_min_stok,barang_pemegang,barang_kategori_id,barang_sub_kategori_id,tbl_kategori.kategori_nama AS kategori_nama,tbl_sub_kategori.kategori_nama AS sub_kategori_nama FROM tbl_barang JOIN tbl_kategori ON tbl_barang.barang_kategori_id=tbl_kategori.kategori_id JOIN tbl_sub_kategori ON tbl_barang.barang_sub_kategori_id = tbl_sub_kategori.kategori_id join tbl_barang_keluar on tbl_barang.barang_id = tbl_barang_keluar.barang_id where tbl_barang.barang_sub_kategori_id = '$subkategori' ");
+		return $hsl;
+	}
 	function get_data__total_masuk_pertanggal($tanggal)
 	{
-		$hsl = $this->db->query("SELECT id,DATE_FORMAT(tbl_barang_masuk.barang_tgl_input,'%d %M %Y') AS barang_tanggal,barang_nama,tbl_barang_masuk.barang_id as barang_id,barang_jumlah,barang_pembawa FROM tbl_barang_masuk JOIN tbl_barang ON tbl_barang_masuk.barang_id=tbl_barang.barang_id WHERE DATE(tbl_barang_masuk.barang_tgl_input)='$tanggal' ORDER BY id DESC");
+		$hsl = $this->db->query("SELECT id,DATE_FORMAT(tbl_barang_masuk.barang_tgl_input,'%d %M %Y') AS barang_tanggal,tbl_sub_kategori.kategori_nama AS sub_kategori_nama,barang_nama,tbl_barang_masuk.barang_id as barang_id,barang_jumlah,barang_pembawa FROM tbl_barang_masuk JOIN tbl_barang ON tbl_barang_masuk.barang_id=tbl_barang.barang_id  WHERE DATE(tbl_barang_masuk.barang_tgl_input)='$tanggal' ORDER BY id DESC");
 		return $hsl;
 	}
 	function get_data__total_keluar_pertanggal($tanggal)

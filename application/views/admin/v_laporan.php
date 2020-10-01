@@ -57,21 +57,21 @@
                     <tbody>
                         <tr>
                             <td style="text-align:center;vertical-align:middle">1</td>
-                            <td style="vertical-align:middle;">Laporan Barang Masuk</td>
+                            <td style="vertical-align:middle;">Laporan Barang Masuk Keseluruhan</td>
                             <td style="text-align:center;">
                                 <a class="btn btn-sm btn-default" href="<?php echo base_url() . 'admin/laporan/lap_stok_barang_masuk' ?>" target="_blank"><span class="fa fa-print"></span> Print</a>
                             </td>
                         </tr>
                         <tr>
                             <td style="text-align:center;vertical-align:middle">2</td>
-                            <td style="vertical-align:middle;">Laporan Barang Keluar</td>
+                            <td style="vertical-align:middle;">Laporan Barang Keluar Keseluruhan</td>
                             <td style="text-align:center;">
                                 <a class="btn btn-sm btn-default" href="<?php echo base_url() . 'admin/laporan/lap_stok_barang_keluar' ?>" target="_blank"><span class="fa fa-print"></span> Print</a>
                             </td>
                         </tr>
                         <tr>
                             <td style="text-align:center;vertical-align:middle">3</td>
-                            <td style="vertical-align:middle;">Laporan Barang Keseluruhan</td>
+                            <td style="vertical-align:middle;">Laporan Barang Gudang Keseluruhan</td>
                             <td style="text-align:center;">
                                 <a class="btn btn-sm btn-default" href="<?php echo base_url() . 'admin/laporan/lap_stok_barang' ?>" target="_blank"><span class="fa fa-print"></span> Print</a>
                             </td>
@@ -120,12 +120,98 @@
                                 <a class="btn btn-sm btn-default" href="#lap_keluar_pertahun" data-toggle="modal"><span class="fa fa-print"></span> Print</a>
                             </td>
                         </tr>
+                        <tr>
+                            <td style="text-align:center;vertical-align:middle">10</td>
+                            <td style="vertical-align:middle;">Laporan Barang Masuk Per Kategori</td>
+                            <td style="text-align:center;">
+                                <a class="btn btn-sm btn-default" href="#lap_masuk_perkategori" data-toggle="modal"><span class="fa fa-print"></span> Print</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align:center;vertical-align:middle">11</td>
+                            <td style="vertical-align:middle;">Laporan Barang Keluar Perkategori</td>
+                            <td style="text-align:center;">
+                                <a class="btn btn-sm btn-default" href="#lap_keluar_perkategori" data-toggle="modal"><span class="fa fa-print"></span> Print</a>
+                            </td>
+                        </tr>
 
                     </tbody>
                 </table>
             </div>
         </div>
         <!-- ============ MODAL ADD =============== -->
+        <div class="modal fade" id="lap_masuk_perkategori" tabindex="-1" role="dialog" aria-labelledby="largeModal" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                        <h3 class="modal-title" id="myModalLabel">Pilih Sub Kategori</h3>
+                    </div>
+                    <form class="form-horizontal" method="post" action="<?php echo base_url() . 'admin/laporan/lap_masuk_perkategori' ?>" target="_blank">
+                        <div class="modal-body">
+
+                            <div class="form-group">
+                                <label class="control-label col-xs-3">Tanggal</label>
+                                <div class="col-xs-9">
+                                    <select name="subkategori" class="selectpicker show-tick form-control" data-live-search="true" title="Pilih Sub Kategori" data-width="80%" placeholder="Pilih Sub Kategori" required>
+                                        <?php foreach ($kat3->result_array() as $k3) {
+                                            $id_kat = $k3['kategori_id'];
+                                            $nm_kat = $k3['kategori_nama'];
+                                        ?>
+                                            <option value="<?php echo $id_kat; ?>"><?php echo $nm_kat; ?></option>
+                                        <?php } ?>
+
+                                    </select>
+                                </div>
+                            </div>
+
+
+                        </div>
+
+                        <div class="modal-footer">
+                            <button class="btn" data-dismiss="modal" aria-hidden="true">Tutup</button>
+                            <button class="btn btn-info"><span class="fa fa-print"></span> Cetak</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="lap_keluar_perkategori" tabindex="-1" role="dialog" aria-labelledby="largeModal" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                        <h3 class="modal-title" id="myModalLabel">Pilih Sub Kategori</h3>
+                    </div>
+                    <form class="form-horizontal" method="post" action="<?php echo base_url() . 'admin/laporan/lap_keluar_perkategori' ?>" target="_blank">
+                        <div class="modal-body">
+
+                            <div class="form-group">
+                                <label class="control-label col-xs-3">Tanggal</label>
+                                <div class="col-xs-9">
+                                    <select name="subkategori" class="selectpicker show-tick form-control" data-live-search="true" title="Pilih Sub Kategori" data-width="80%" placeholder="Pilih Sub Kategori" required>
+                                        <?php foreach ($kat3->result_array() as $k3) {
+                                            $id_kat = $k3['kategori_id'];
+                                            $nm_kat = $k3['kategori_nama'];
+                                        ?>
+                                            <option value="<?php echo $id_kat; ?>"><?php echo $nm_kat; ?></option>
+                                        <?php } ?>
+
+                                    </select>
+                                </div>
+                            </div>
+
+
+                        </div>
+
+                        <div class="modal-footer">
+                            <button class="btn" data-dismiss="modal" aria-hidden="true">Tutup</button>
+                            <button class="btn btn-info"><span class="fa fa-print"></span> Cetak</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
         <div class="modal fade" id="lap_masuk_pertanggal" tabindex="-1" role="dialog" aria-labelledby="largeModal" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
