@@ -25,24 +25,35 @@ class Barang extends CI_Controller
 	}
 	function tambah_barang()
 	{
-		if ($this->session->userdata('akses') == '1') {
-			$kobar = $this->m_barang->get_kobar();
-			$nabar = $this->input->post('nabar');
-			$kat = $this->input->post('kategori');
-			$subkat = $this->input->post('subkategori');
-			$pemegang = $this->input->post('pemegang');
-			$satuan = $this->input->post('satuan');
-			$volume = $this->input->post('volume');
-			$deskripsi = $this->input->post('deskripsi');
-			$merk = $this->input->post('merk');
-			$tipe = $this->input->post('tipe');
-			$stok = $this->input->post('stok');
-			$min_stok = $this->input->post('min_stok');
-			$this->m_barang->simpan_barang($kobar, $nabar, $kat, $satuan, $pemegang, $subkat, $volume, $merk, $tipe, $deskripsi, $stok, $min_stok);
-
-			redirect('admin/barang');
+		$this->load->library('form_validation');
+		$this->form_validation->set_rules('nabar', 'Nama Barang', 'is_unique[tbl_barang.barang_nama]');
+		$this->form_validation->set_message('is_unique', '%s ini sudah dipakai');
+		if ($this->form_validation->run() == FALSE) {
+			$data['data'] = $this->m_barang->tampil_barang();
+			$data['kat2'] = $this->m_kategori->tampil_kategori();
+			$data['kat3'] = $this->m_sub_kategori->tampil_kategori();
+			$this->load->view('admin/v_barang', $data);
 		} else {
-			echo "Halaman tidak ditemukan";
+
+			if ($this->session->userdata('akses') == '1') {
+				$kobar = $this->m_barang->get_kobar();
+				$nabar = $this->input->post('nabar');
+				$kat = $this->input->post('kategori');
+				$subkat = $this->input->post('subkategori');
+				$pemegang = $this->input->post('pemegang');
+				$satuan = $this->input->post('satuan');
+				$volume = $this->input->post('volume');
+				$deskripsi = $this->input->post('deskripsi');
+				$merk = $this->input->post('merk');
+				$tipe = $this->input->post('tipe');
+				$stok = $this->input->post('stok');
+				$min_stok = $this->input->post('min_stok');
+				$this->m_barang->simpan_barang($kobar, $nabar, $kat, $satuan, $pemegang, $subkat, $volume, $merk, $tipe, $deskripsi, $stok, $min_stok);
+
+				redirect('admin/barang');
+			} else {
+				echo "Halaman tidak ditemukan";
+			}
 		}
 	}
 	function edit_barang()

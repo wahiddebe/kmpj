@@ -17,10 +17,6 @@
                  <?php $u = $this->session->userdata('user'); ?>
                  <?php if ($h == '1') { ?>
                      <!--ending dropdown-->
-
-                     <li>
-                         <a href="<?php echo base_url() . 'admin/grafik' ?>"><span class="fa fa-line-chart"></span> Grafik</a>
-                     </li>
                      <li>
                          <a href="<?php echo base_url() . 'admin/laporan' ?>"><span class="fa fa-file"></span> Laporan</a>
                      </li>

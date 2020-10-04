@@ -35,10 +35,13 @@
         <!-- Page Heading -->
         <div class="row">
             <div class="col-lg-12">
+
                 <h1 class="page-header">Data
                     <small>Barang Keseluruhan</small>
                     <div class="pull-right"><a href="#" class="btn btn-sm btn-success" data-toggle="modal" data-target="#largeModal"><span class="fa fa-plus"></span> Tambah Barang</a></div>
                 </h1>
+                <h6><?php echo validation_errors(); ?></h6>
+
             </div>
         </div>
         <!-- /.row -->
@@ -116,6 +119,7 @@
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                         <h3 class="modal-title" id="myModalLabel">Tambah Barang</h3>
                     </div>
+
                     <form class="form-horizontal" method="post" action="<?php echo base_url() . 'admin/barang/tambah_barang' ?>">
                         <div class="modal-body">
 
