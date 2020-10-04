@@ -21,6 +21,12 @@ class M_barang extends CI_Model
 		return $hsl;
 	}
 
+	function tampil_barang_sub($id)
+	{
+		$hsl = $this->db->query("SELECT barang_id,barang_nama,barang_tipe,barang_merk,barang_satuan,barang_volume,barang_deskripsi,barang_stok,barang_min_stok,barang_pemegang,barang_kategori_id,barang_sub_kategori_id,tbl_kategori.kategori_nama AS kategori_nama,tbl_sub_kategori.kategori_nama AS sub_kategori_nama FROM tbl_barang JOIN tbl_kategori ON tbl_barang.barang_kategori_id=tbl_kategori.kategori_id JOIN tbl_sub_kategori ON tbl_barang.barang_sub_kategori_id = tbl_sub_kategori.kategori_id where tbl_barang.barang_sub_kategori_id = $id ");
+		return $hsl;
+	}
+
 	function simpan_barang($kobar, $nabar, $kat, $satuan, $pemegang, $subkat, $volume, $merk, $tipe, $deskripsi, $stok, $min_stok)
 	{
 		$user_id = $this->session->userdata('idadmin');

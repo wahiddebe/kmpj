@@ -18,11 +18,24 @@ class Barang extends CI_Controller
 			$data['data'] = $this->m_barang->tampil_barang();
 			$data['kat2'] = $this->m_kategori->tampil_kategori();
 			$data['kat3'] = $this->m_sub_kategori->tampil_kategori();
+			$this->load->view('admin/v_barang_menu', $data);
+		} else {
+			echo "Halaman tidak ditemukan";
+		}
+	}
+
+	function sub($id)
+	{
+		if ($this->session->userdata('akses') == '1') {
+			$data['data'] = $this->m_barang->tampil_barang_sub($id);
+			$data['kat2'] = $this->m_kategori->tampil_kategori();
+			$data['kat3'] = $this->m_sub_kategori->tampil_kategori();
 			$this->load->view('admin/v_barang', $data);
 		} else {
 			echo "Halaman tidak ditemukan";
 		}
 	}
+
 	function tambah_barang()
 	{
 		$this->load->library('form_validation');
@@ -32,7 +45,7 @@ class Barang extends CI_Controller
 			$data['data'] = $this->m_barang->tampil_barang();
 			$data['kat2'] = $this->m_kategori->tampil_kategori();
 			$data['kat3'] = $this->m_sub_kategori->tampil_kategori();
-			$this->load->view('admin/v_barang', $data);
+			$this->load->view('admin/v_barang_menu', $data);
 		} else {
 
 			if ($this->session->userdata('akses') == '1') {
