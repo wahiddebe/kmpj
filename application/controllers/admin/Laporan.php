@@ -25,6 +25,8 @@ class Laporan extends CI_Controller
 			$data['jual_thn'] = $this->m_laporan->get_tahun_masuk();
 			$data['jual_bln_keluar'] = $this->m_laporan->get_bulan_keluar();
 			$data['jual_thn_keluar'] = $this->m_laporan->get_tahun_keluar();
+			$data['sub_masuk'] = $this->m_laporan->get_sub_masuk();
+			$data['sub_keluar'] = $this->m_laporan->get_sub_keluar();
 			$data['kat3'] = $this->m_sub_kategori->tampil_kategori();
 			$this->load->view('admin/v_laporan', $data);
 		} else {

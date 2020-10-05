@@ -151,12 +151,12 @@
                         <div class="modal-body">
 
                             <div class="form-group">
-                                <label class="control-label col-xs-3">Tanggal</label>
+                                <label class="control-label col-xs-3"></label>
                                 <div class="col-xs-9">
                                     <select name="subkategori" class="selectpicker show-tick form-control" data-live-search="true" title="Pilih Sub Kategori" data-width="80%" placeholder="Pilih Sub Kategori" required>
-                                        <?php foreach ($kat3->result_array() as $k3) {
-                                            $id_kat = $k3['kategori_id'];
-                                            $nm_kat = $k3['kategori_nama'];
+                                        <?php foreach ($sub_masuk->result_array() as $k3) {
+                                            $id_kat = $k3['barang_sub_kategori_id'];
+                                            $nm_kat = $k3['sub_kategori_nama'];
                                         ?>
                                             <option value="<?php echo $id_kat; ?>"><?php echo $nm_kat; ?></option>
                                         <?php } ?>
@@ -187,12 +187,12 @@
                         <div class="modal-body">
 
                             <div class="form-group">
-                                <label class="control-label col-xs-3">Tanggal</label>
+                                <label class="control-label col-xs-3"></label>
                                 <div class="col-xs-9">
                                     <select name="subkategori" class="selectpicker show-tick form-control" data-live-search="true" title="Pilih Sub Kategori" data-width="80%" placeholder="Pilih Sub Kategori" required>
-                                        <?php foreach ($kat3->result_array() as $k3) {
-                                            $id_kat = $k3['kategori_id'];
-                                            $nm_kat = $k3['kategori_nama'];
+                                        <?php foreach ($sub_keluar->result_array() as $k3) {
+                                            $id_kat = $k3['barang_sub_kategori_id'];
+                                            $nm_kat = $k3['sub_kategori_nama'];
                                         ?>
                                             <option value="<?php echo $id_kat; ?>"><?php echo $nm_kat; ?></option>
                                         <?php } ?>

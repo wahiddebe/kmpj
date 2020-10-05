@@ -113,4 +113,14 @@ class M_laporan extends CI_Model
 	// 	$hsl=$this->db->query("SELECT DATE_FORMAT(jual_tanggal,'%M %Y') AS bulan,d_jual_barang_nama,d_jual_barang_satuan,d_jual_barang_harpok,d_jual_barang_harjul,(d_jual_barang_harjul-d_jual_barang_harpok) AS keunt,d_jual_qty,d_jual_diskon,SUM(((d_jual_barang_harjul-d_jual_barang_harpok)*d_jual_qty)-(d_jual_qty*d_jual_diskon)) AS total FROM tbl_jual JOIN tbl_detail_jual ON jual_nofak=d_jual_nofak WHERE DATE_FORMAT(jual_tanggal,'%M %Y')='$bulan'");
 	// 	return $hsl;
 	// }
+	function get_sub_masuk()
+	{
+		$hsl = $this->db->query("SELECT barang_sub_kategori_id,tbl_sub_kategori.kategori_nama AS sub_kategori_nama FROM tbl_barang JOIN tbl_kategori ON tbl_barang.barang_kategori_id=tbl_kategori.kategori_id JOIN tbl_sub_kategori ON tbl_barang.barang_sub_kategori_id = tbl_sub_kategori.kategori_id join tbl_barang_masuk on tbl_barang.barang_id = tbl_barang_masuk.barang_id  ");
+		return $hsl;
+	}
+	function get_sub_keluar()
+	{
+		$hsl = $this->db->query("SELECT barang_sub_kategori_id,tbl_sub_kategori.kategori_nama AS sub_kategori_nama FROM tbl_barang JOIN tbl_kategori ON tbl_barang.barang_kategori_id=tbl_kategori.kategori_id JOIN tbl_sub_kategori ON tbl_barang.barang_sub_kategori_id = tbl_sub_kategori.kategori_id join tbl_barang_keluar on tbl_barang.barang_id = tbl_barang_keluar.barang_id  ");
+		return $hsl;
+	}
 }
